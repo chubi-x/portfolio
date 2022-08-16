@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Ztext from "react-ztext";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <div className="under-construction">
+        <lottie-player
+          src="https://assets6.lottiefiles.com/packages/lf20_AQcLsD.json"
+          background="transparent"
+          speed="1"
+          style={{ width: "280px", height: "280px" }}
+          loop
+          autoplay
+        ></lottie-player>
+        <Ztext
+          depth="0.7rem"
+          direction="both"
+          event="pointer"
+          eventRotation="65deg"
+          eventDirection="default"
+          fade={false}
+          layers={10}
+          perspective="500px"
+          style={{
+            fontSize: "1.2rem",
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          <h1>Coming Soon 👀</h1>
+        </Ztext>
+      </div>
     </div>
   );
 }
 
 export default App;
+

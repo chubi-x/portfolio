@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 @font-face {
   font-family: 'NeueMontreal';
   src: url('/fonts/NeueMontreal-Regular.otf') format('opentype');
@@ -54,6 +55,7 @@ body {
 }
 :root {
   --grey: #f2f2f2;
+  --dark-grey: #667085;
   --green: #cfd21c;
   --blue: #0b52a1;
   --dark-blue: #002f86;
@@ -61,6 +63,10 @@ body {
 
   --rule-height: 100px;
   --rule-width: 2.5px;
+}
+ul {
+  list-style: none;
+  padding-inline-start: 0px;
 }
 a {
   text-decoration: none;

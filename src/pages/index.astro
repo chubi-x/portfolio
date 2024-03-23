@@ -1,6 +1,8 @@
 ---
 import '../styles/global.scss'
 import '../styles/index.scss'
+
+import ProjectCard from '../components/ProjectCard.astro'
 ---
 
 <html lang='en'>
@@ -11,7 +13,7 @@ import '../styles/index.scss'
 		<title>Astro</title>
 	</head>
 	<body>
-		<nav>
+		<nav class='navbar'>
 			<div class='logo'>Chubiyojo</div>
 			<ul class='nav-links'>
 				<li><a href='#'> resume </a></li>
@@ -94,36 +96,54 @@ import '../styles/index.scss'
 					<h1>Projects</h1>
 					<nav class='projects-categories'>
 						<ul>
-							<li>All Projects <span class='number'>6</span></li>
-							<li>Live Projects <span class='number'>6</span></li>
-							<li>Personal Projects <span class='number'>6</span></li>
-							<li>Fullstack <span class='number'>6</span></li>
-							<li>Frontend <span class='number'>6</span></li>
-							<li>Backend <span class='number'>6</span></li>
-							<li>Machine Learning <span class='number'>6</span></li>
-							<li>Data Analysis <span class='number'>6</span></li>
+							<li class='projects-category active'>
+								<a role='button' href='#'
+									>All Projects <span class='number'>6</span></a
+								>
+							</li>
+							<li class='projects-category'>
+								<a role='button' href='#'
+									>Live Projects <span class='number'>6</span></a
+								>
+							</li>
+							<li class='projects-category'>
+								<a role='button' href='#'
+									>Personal Projects <span class='number'>6</span></a
+								>
+							</li>
+							<li class='projects-category'>
+								<a role='button' href='#'>Fullstack <span class='number'>6</span></a
+								>
+							</li>
+							<li class='projects-category'>
+								<a role='button' href='#'>Frontend <span class='number'>6</span></a>
+							</li>
+							<li class='projects-category'>
+								<a href='#' role='button'> Backend <span class='number'>6</span></a>
+							</li>
+							<li class='projects-category'>
+								<a role='button' href='#'
+									>Machine Learning <span class='number'>6</span></a
+								>
+							</li>
+							<li class='projects-category'>
+								<a role='button' href='#'
+									>Data Analysis <span class='number'>6</span></a
+								>
+							</li>
 						</ul>
 					</nav>
 				</div>
-				<div class='project-cards'>
-					<div class='card'>
-						<div class='image'>
-							<img src='' alt='' />
-						</div>
-						<div class='description'>
-							<h3>Maliko Portfolio</h3>
-							<p>
-								Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt
-								reprehenderit iusto ipsum ad fugit
-							</p>
-							<div class='technologies'>
-								<span class='pill'>Javascript</span>
-								<span class='pill'>React</span>
-								<span class='pill'>CSS</span>
-							</div>
-						</div>
+				<div class='projects-cards-wrapper'>
+					<div class='projects-cards'>
+						<ProjectCard />
+						<ProjectCard />
+						<ProjectCard />
+						<ProjectCard />
+						<ProjectCard />
+						<ProjectCard />
 					</div>
-					<button class='show-projects'>Show more</button>
+					<button class='projects-cards-button'>Show more</button>
 				</div>
 			</section>
 			<section id='hobbies'>

@@ -1,4 +1,4 @@
-nav {
+nav.navbar {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -12,9 +12,7 @@ nav {
   ul.nav-links {
     width: 400px;
     display: flex;
-    list-style: none;
     justify-content: space-between;
-    padding-inline-start: 0px;
 
     a {
       text-decoration: none;
@@ -108,7 +106,7 @@ section.hero {
         }
       }
       div.role {
-        margin-left: -6%;
+        margin-left: -5.6%;
         position: absolute;
         max-width: 50%;
 
@@ -126,7 +124,7 @@ section.hero {
       display: flex;
       flex-grow: 1;
       height: auto;
-      margin-top: 5%;
+      margin-top: 4%;
       &-left,
       &-right {
         margin-top: 8%;
@@ -159,7 +157,7 @@ section.hero {
         display: flex;
         align-items: flex-end;
         height: 100%;
-        width: 200px;
+        width: 300px;
         margin-left: 10%;
         img {
           width: 100%;
@@ -192,6 +190,7 @@ section.hero {
         p {
           margin-bottom: 30px;
           line-height: 24px;
+          max-width: 100%;
         }
         a {
           color: white;
@@ -205,6 +204,125 @@ section.hero {
     }
   }
 }
-section.projects {
+.projects {
+  display: flex;
+  flex-direction: column;
   height: 100vh;
+  padding: 50px 12rem;
+  &-header {
+    h1 {
+      font-weight: normal;
+      font-size: clamp(1.25rem, 0.9756rem + 1.2195vw, 2.5rem);
+      text-align: center;
+    }
+  }
+  &-categories ul {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 17px;
+    font-family: 'Inter';
+    font-size: 14px;
+    border-bottom: 3px solid var(--grey);
+  }
+  &-category {
+    $parent: &;
+
+    a {
+      color: var(--dark-grey);
+    }
+    &.active {
+      a {
+        color: black;
+      }
+      font-weight: 500;
+
+      &::after {
+        position: relative;
+        top: 20px;
+        border-bottom: 3px solid black;
+        display: block;
+        content: '';
+      }
+    }
+
+    span.number {
+      display: inline-block;
+      margin-left: 10px;
+      background-color: var(--grey);
+      padding: 5px 10px 5px 10px;
+      border-radius: 50%;
+    }
+  }
+  &-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 40px;
+    padding-top: 50px;
+    --card-radius: 25px;
+    &-wrapper {
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      max-width: 30%;
+      height: 350px;
+      border-radius: var(--card-radius);
+      background-position: center;
+
+      &-image {
+        height: 100%;
+        width: 100%;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      p {
+        max-width: 100%;
+        font-size: 12px;
+      }
+      &-description {
+        background: rgba(84, 84, 84, 0.3);
+        backdrop-filter: blur(10px);
+        padding: 10px 20px;
+        color: white;
+        border-radius: 0px 0px var(--card-radius) var(--card-radius);
+
+        h3 {
+          margin: 0px;
+        }
+      }
+
+      &-technologies {
+        &-pill {
+          font-size: 12px;
+          font-weight: 500;
+          display: inline-block;
+          background-color: black;
+          padding: 5px 10px;
+          border-radius: 50px;
+        }
+      }
+    }
+    &-button {
+      margin-top: 50px;
+      border-color: var(--blue);
+      color: var(--blue);
+      background-color: white;
+      border-radius: 15px;
+      padding: 15px;
+      cursor: pointer;
+      font-family: 'NeueMontreal';
+      font-weight: 500;
+      font-size: 16px;
+    }
+  }
 }

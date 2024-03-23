@@ -1,5 +1,6 @@
 ---
-import '../styles/global.css'
+import '../styles/global.scss'
+import '../styles/index.scss'
 ---
 
 <html lang='en'>
@@ -10,80 +11,100 @@ import '../styles/global.css'
 		<title>Astro</title>
 	</head>
 	<body>
+		<nav>
+			<div class='logo'>Chubiyojo</div>
+			<ul class='nav-links'>
+				<li><a href='#'> resume </a></li>
+				<li><a href='#'> latest work </a></li>
+				<li><a href='#'> blog </a></li>
+				<li><a href='#'> schedule a call </a></li>
+			</ul>
+		</nav>
 		<main>
 			<section class='hero'>
-				<nav>
-					<div class='logo'>Chubiyojo Adejoh</div>
-					<ul class='nav-links'>
-						<li>resume</li>
-						<li>latest work</li>
-						<li>blog</li>
-						<li>schedule a call</li>
-					</ul>
-				</nav>
 				<aside>
-					<div class='vertical-rule'></div>
-					<div class='social-links'>
-						<a href='twitter' class='link'></a>
-						<a href='linkedin' class='link'></a>
-						<a href='github' class='link'></a>
+					<div>
+						<div class='rule-container'>
+							<span class='rule rule--vertical'></span>
+						</div>
+						<div class='social-links'>
+							<a href='#' class='link'>
+								<img src='/public/icons/twitter.svg' alt='twitter icon' />
+							</a>
+							<a href='#' class='link'>
+								<img src='/public/icons/linkedin.svg' alt='linkedin icon' />
+							</a>
+							<a href='#' class='link'>
+								<img src='/public/icons/github.svg' alt='github icon' />
+							</a>
+						</div>
 					</div>
 				</aside>
 				<div class='hero-main'>
-					<div class='greetings'>
-						<div class='left'>
-							<h1>Hello There</h1>
-							<div class='horizontal-rule'></div>
-						</div>
-						<div class='right'>
-							<div class='vertical-rule'></div>
-							<p>
-								Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque
-								officiis quam non,
-							</p>
-						</div>
+					<div class='subtitle'>
+						<div class='rule rule--vertical'></div>
+						<p>
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque
+							officiis quam non,
+						</p>
 					</div>
 					<div class='title'>
-						<h1 class='role'>Software Engineer</h1>
+						<div class='role'>
+							<div class='greetings'>
+								<h1>Hello There</h1>
+								<div class='rule rule--horizontal'></div>
+							</div>
+							<h1 class='role'>Software Engineer</h1>
+						</div>
 						<div class='intro'>
 							<div class='intro-left'>
 								<h2>
-									<span>live</span>
-									<div class='horizontal-rule'></div>
-									<span>Create.</span>
-									<span>Repeat.</span>
+									<span>
+										<span>live</span>
+										<div class='rule rule--horizontal'></div>
+									</span>
+									<span>create.</span>
+									<span>repeat.</span>
 								</h2>
-								<div class='intro-image'>
-									<img src='' alt='intro image' />
+								<div class='intro-headshot'>
+									<img src='public/images/headshot.png' alt='headshot' />
 								</div>
 							</div>
 							<div class='intro-right'>
-								<h2>Meet Chubi</h2>
-								<p>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									Corporis nostrum in maxime tempora aliquam expedita libero
-									numquam corrupti illum, repellendus aperiam architecto harum
-									repellat ut sequi assumenda vitae delectus itaque.
-								</p>
-								<a href='' class='cta'>Get in touch</a>
+								<div class='content'>
+									<h2><span>Meet</span> Chubi</h2>
+									<p>
+										Lorem ipsum dolor sit amet consectetur adipisicing elit.
+										Corporis nostrum in maxime tempora aliquam expedita libero
+										numquam corrupti illum, repellendus aperiam architecto harum
+										repellat ut sequi assumenda vitae delectus itaque.
+									</p>
+									<a href='#'>
+										<span>Get in touch </span>
+										<img src='/public/icons/arrow.svg' alt='arrow' />
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
 			<section class='projects'>
-				<nav class='projects-categories'>
-					<ul>
-						<li>All Projects <span class='number'>6</span></li>
-						<li>Live Projects <span class='number'>6</span></li>
-						<li>Personal Projects <span class='number'>6</span></li>
-						<li>Fullstack <span class='number'>6</span></li>
-						<li>Frontend <span class='number'>6</span></li>
-						<li>Backend <span class='number'>6</span></li>
-						<li>Machine Learning <span class='number'>6</span></li>
-						<li>Data Analysis <span class='number'>6</span></li>
-					</ul>
-				</nav>
+				<div class='projects-header'>
+					<h1>Projects</h1>
+					<nav class='projects-categories'>
+						<ul>
+							<li>All Projects <span class='number'>6</span></li>
+							<li>Live Projects <span class='number'>6</span></li>
+							<li>Personal Projects <span class='number'>6</span></li>
+							<li>Fullstack <span class='number'>6</span></li>
+							<li>Frontend <span class='number'>6</span></li>
+							<li>Backend <span class='number'>6</span></li>
+							<li>Machine Learning <span class='number'>6</span></li>
+							<li>Data Analysis <span class='number'>6</span></li>
+						</ul>
+					</nav>
+				</div>
 				<div class='project-cards'>
 					<div class='card'>
 						<div class='image'>

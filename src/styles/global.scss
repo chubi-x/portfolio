@@ -37,16 +37,47 @@
 @font-face {
   font-family: 'NeueMontreal';
   src: url('/fonts/NeueMontreal-Medium.otf') format('opentype');
-  font-weight: bold;
+  font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: 'NeueMontreal';
   src: url('/fonts/NeueMontreal-MediumItalic.otf') format('opentype');
-  font-weight: bold;
+  font-weight: 500;
   font-style: italic;
 }
 
-html {
+html,
+body {
+  margin: 0px;
   font-family: 'NeueMontreal';
+}
+:root {
+  --grey: #f2f2f2;
+  --green: #cfd21c;
+  --blue: #0b52a1;
+  --dark-blue: #002f86;
+  --black: #000000;
+
+  --rule-height: 100px;
+  --rule-width: 2.5px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.rule {
+  &-container {
+    display: flex;
+    margin: 0 auto;
+  }
+  height: var(--rule-height);
+  width: var(--rule-width);
+  background-color: var(--black);
+  opacity: 30%;
+  &--horizontal {
+    width: var(--rule-height);
+    height: var(--rule-width);
+  }
 }

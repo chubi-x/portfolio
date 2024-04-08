@@ -1,199 +1,333 @@
 ---
-import '../styles/global.scss'
 import '../styles/index.scss'
+import '../styles/hobbies.scss'
 
 import ProjectCard from '../components/ProjectCard.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
 ---
 
-<html lang='en'>
-	<head>
-		<meta charset='utf-8' />
-		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-		<meta name='viewport' content='width=device-width' />
-		<title>Astro</title>
-	</head>
-	<body>
-		<nav class='navbar'>
-			<div class='logo'>Chubiyojo</div>
-			<ul class='nav-links'>
-				<li><a href='#'> resume </a></li>
-				<li><a href='#'> latest work </a></li>
-				<li><a href='#'> blog </a></li>
-				<li><a href='#'> schedule a call </a></li>
-			</ul>
-		</nav>
-		<main>
-			<section class='hero'>
-				<aside>
-					<div>
-						<div class='rule-container'>
-							<span class='rule rule--vertical'></span>
-						</div>
-						<div class='social-links'>
-							<a href='#' class='link'>
-								<img src='/public/icons/twitter.svg' alt='twitter icon' />
-							</a>
-							<a href='#' class='link'>
-								<img src='/public/icons/linkedin.svg' alt='linkedin icon' />
-							</a>
-							<a href='#' class='link'>
-								<img src='/public/icons/github.svg' alt='github icon' />
-							</a>
-						</div>
-					</div>
-				</aside>
-				<div class='hero-main'>
-					<div class='subtitle'>
-						<div class='rule rule--vertical'></div>
-						<p>
-							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque
-							officiis quam non,
-						</p>
-					</div>
-					<div class='title'>
-						<div class='role'>
-							<div class='greetings'>
-								<h1>Hello There</h1>
-								<div class='rule rule--horizontal'></div>
-							</div>
-							<h1 class='role'>Software Engineer</h1>
-						</div>
-						<div class='intro'>
-							<div class='intro-left'>
-								<h2>
-									<span>
-										<span>live</span>
-										<div class='rule rule--horizontal'></div>
-									</span>
-									<span>create.</span>
-									<span>repeat.</span>
-								</h2>
-								<div class='intro-headshot'>
-									<img src='public/images/headshot.png' alt='headshot' />
-								</div>
-							</div>
-							<div class='intro-right'>
-								<div class='content'>
-									<h2><span>Meet</span> Chubi</h2>
-									<p>
-										Lorem ipsum dolor sit amet consectetur adipisicing elit.
-										Corporis nostrum in maxime tempora aliquam expedita libero
-										numquam corrupti illum, repellendus aperiam architecto harum
-										repellat ut sequi assumenda vitae delectus itaque.
-									</p>
-									<a href='#'>
-										<span>Get in touch </span>
-										<img src='/public/icons/arrow.svg' alt='arrow' />
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
+<BaseLayout title='Chubiyojo'>
+	<section class='hero'>
+		<aside>
+			<div>
+				<div class='rule-container'>
+					<span class='rule rule--vertical'></span>
 				</div>
-			</section>
-			<section class='projects'>
-				<div class='projects-header'>
-					<h1>Projects</h1>
-					<nav class='projects-categories'>
-						<ul>
-							<li class='projects-category active'>
-								<a role='button' href='#'
-									>All Projects <span class='number'>6</span></a
-								>
-							</li>
-							<li class='projects-category'>
-								<a role='button' href='#'
-									>Live Projects <span class='number'>6</span></a
-								>
-							</li>
-							<li class='projects-category'>
-								<a role='button' href='#'
-									>Personal Projects <span class='number'>6</span></a
-								>
-							</li>
-							<li class='projects-category'>
-								<a role='button' href='#'>Fullstack <span class='number'>6</span></a
-								>
-							</li>
-							<li class='projects-category'>
-								<a role='button' href='#'>Frontend <span class='number'>6</span></a>
-							</li>
-							<li class='projects-category'>
-								<a href='#' role='button'> Backend <span class='number'>6</span></a>
-							</li>
-							<li class='projects-category'>
-								<a role='button' href='#'
-									>Machine Learning <span class='number'>6</span></a
-								>
-							</li>
-							<li class='projects-category'>
-								<a role='button' href='#'
-									>Data Analysis <span class='number'>6</span></a
-								>
-							</li>
-						</ul>
-					</nav>
+				<div class='social-links'>
+					<a href='#' class='link'>
+						<img src='/icons/twitter.svg' alt='twitter icon' />
+					</a>
+					<a href='#' class='link'>
+						<img src='/icons/linkedin.svg' alt='linkedin icon' />
+					</a>
+					<a href='#' class='link'>
+						<img src='/icons/github.svg' alt='github icon' />
+					</a>
 				</div>
-				<div class='projects-cards-wrapper'>
-					<div class='projects-cards'>
-						<ProjectCard />
-						<ProjectCard />
-						<ProjectCard />
-						<ProjectCard />
-						<ProjectCard />
-						<ProjectCard />
-					</div>
-					<button class='projects-cards-button'>Show more</button>
-				</div>
-			</section>
-			<section id='hobbies'>
-				<div class='skill-pill'>
-					<p>Skills and hobbies</p>
-				</div>
-				<h1 class='heading'>I love to take photographs</h1>
+			</div>
+		</aside>
+		<div class='hero-main'>
+			<div class='subtitle'>
+				<div class='rule rule--vertical'></div>
 				<p>
-					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi obcaecati officia
-					enim est, provident esse quaerat. Quae dolore porro iure excepturi, ad id
-					deserunt, incidunt labore quaerat earum iste hic?
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque officiis quam
+					non,
 				</p>
-				<button>See more of my work</button>
-			</section>
-			<section class='testimonials'>
-				<h4 class='heading'>Testimonials</h4>
-				<h1>Endorsements from people I've worked with</h1>
-				<div class='testimonials-slider'>
-					<div class='testimonial'>
-						<div class='image-wrapper'>
-							<div class='testimonial-image-top-left-asset'></div>
-							<div class='testimonial-image-bottom-right-asset'></div>
+			</div>
+			<div class='title'>
+				<div class='role'>
+					<div class='greetings'>
+						<h1>hey there</h1>
+						<div class='rule rule--horizontal'></div>
+					</div>
+					<h1 class='role'>SOFTWARE ENGINEER</h1>
+				</div>
+				<div class='intro'>
+					<div class='intro-left'>
+						<h2>
+							<span>
+								<span>live</span>
+								<div class='rule rule--horizontal'></div>
+							</span>
+							<span>create.</span>
+							<span>repeat.</span>
+						</h2>
+						<div class='intro-headshot'>
+							<img src='/images/headshot.png' alt='headshot' />
 						</div>
-						<div class='text-wrapper'>
-							<div class='quote-asset'></div>
-							<div class='text'>
-								<p>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-									accusamus, laboriosam blanditiis non perferendis sequi. Facere
-									suscipit tenetur quaerat ipsam laborum temporibus repellendus
-									saepe officiis illo voluptatibus, reiciendis eveniet dolores.
-								</p>
-
-								<div class='person'>
-									<p class='name'>Deborah Adamu</p>
-									<p class='title'>Accountant</p>
-								</div>
-							</div>
+					</div>
+					<div class='intro-right'>
+						<div class='content'>
+							<h2><span>Meet</span> Chubi</h2>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+								nostrum in maxime tempora aliquam expedita libero numquam corrupti
+								illum, repellendus aperiam architecto harum repellat ut sequi
+								assumenda vitae delectus itaque.
+							</p>
+							<a href='#'>
+								<span>Get in touch </span>
+								<img src='/icons/arrow.svg' alt='arrow' />
+							</a>
 						</div>
 					</div>
 				</div>
-			</section>
-			<section class='cta-hero'>
-				<div class='hero'>
-					<div class='assets-wrapper'></div>
-					<h1>Ready to build something amazing?</h1>
-					<button>Lets have a chat!</button>
+			</div>
+		</div>
+	</section>
+	<section class='projects'>
+		<h1 class='projects-header'>Engineering Projects</h1>
+		<div class='projects-cards-wrapper'>
+			<div class='projects-cards'>
+				<ProjectCard />
+				<ProjectCard />
+				<ProjectCard />
+				<ProjectCard />
+			</div>
+			<a href='#' class='btn btn-outline p-10'>show more</a>
+		</div>
+	</section>
+
+	<section class='hobbies hobbies--spacing'>
+		<div class='grid grid--4'>
+			<div class='grid-wrap'>
+				<div class='grid__item'>
+					<div
+						class='grid__item-inner'
+						style='background-image:url(/images/photography/1.png)'
+					>
+					</div>
 				</div>
-			</section>
-			<div class='to-top'></div>
-		</main>
-	</body>
-</html>
+				<div class='grid__item'>
+					<div
+						class='grid__item-inner'
+						style='background-image:url(/images/photography/2.png)'
+					>
+					</div>
+				</div>
+				<div class='grid__item'>
+					<div
+						class='grid__item-inner'
+						style='background-image:url(/images/photography/3.png)'
+					>
+					</div>
+				</div>
+				<div class='grid__item'>
+					<div
+						class='grid__item-inner'
+						style='background-image:url(/images/photography/4.png)'
+					>
+					</div>
+				</div>
+				<div class='grid__item'>
+					<div
+						class='grid__item-inner'
+						style='background-image:url(/images/photography/5.png)'
+					>
+					</div>
+				</div>
+				<div class='grid__item'>
+					<div
+						class='grid__item-inner'
+						style='background-image:url(/images/photography/6.png)'
+					>
+					</div>
+				</div>
+				<div class='grid__item'>
+					<div
+						class='grid__item-inner'
+						style='background-image:url(/images/photography/7.png)'
+					>
+					</div>
+				</div>
+				<div class='grid__item'>
+					<div
+						class='grid__item-inner'
+						style='background-image:url(/images/photography/19.png)'
+					>
+					</div>
+				</div>
+				<div class='grid__item'>
+					<div
+						class='grid__item-inner'
+						style='background-image:url(/images/photography/8.png)'
+					>
+					</div>
+				</div>
+				<div class='grid__item'>
+					<div
+						class='grid__item-inner'
+						style='background-image:url(/images/photography/9.png)'
+					>
+					</div>
+				</div>
+				<div class='grid__item'>
+					<div
+						class='grid__item-inner'
+						style='background-image:url(/images/photography/10.png)'
+					>
+					</div>
+				</div>
+				<div class='grid__item'>
+					<div
+						class='grid__item-inner'
+						style='background-image:url(/images/photography/11.png)'
+					>
+					</div>
+				</div>
+				<div class='grid__item'>
+					<div
+						class='grid__item-inner'
+						style='background-image:url(/images/photography/12.png)'
+					>
+					</div>
+				</div>
+				<div class='grid__item'>
+					<div
+						class='grid__item-inner'
+						style='background-image:url(/images/photography/13.jpg)'
+					>
+					</div>
+				</div>
+				<div class='grid__item'>
+					<div
+						class='grid__item-inner'
+						style='background-image:url(/images/photography/14.jpg)'
+					>
+					</div>
+				</div>
+				<div class='grid__item'>
+					<div
+						class='grid__item-inner'
+						style='background-image:url(/images/photography/15.png)'
+					>
+					</div>
+				</div>
+				<div class='grid__item'>
+					<div
+						class='grid__item-inner'
+						style='background-image:url(/images/photography/16.png)'
+					>
+					</div>
+				</div>
+				<div class='grid__item'>
+					<div
+						class='grid__item-inner'
+						style='background-image:url(/images/photography/17.jpg)'
+					>
+					</div>
+				</div>
+				<div class='grid__item'>
+					<div
+						class='grid__item-inner'
+						style='background-image:url(/images/photography/18.png)'
+					>
+					</div>
+				</div>
+				<div class='grid__item'>
+					<div
+						class='grid__item-inner'
+						style='background-image:url(/images/photography/19.png)'
+					>
+					</div>
+				</div>
+				<div class='grid__item'>
+					<div
+						class='grid__item-inner'
+						style='background-image:url(/images/photography/20.png)'
+					>
+					</div>
+				</div>
+				<div class='grid__item'>
+					<div
+						class='grid__item-inner'
+						style='background-image:url(/images/photography/21.png)'
+					>
+					</div>
+				</div>
+				<div class='grid__item'>
+					<div
+						class='grid__item-inner'
+						style='background-image:url(/images/photography/22.jpg)'
+					>
+					</div>
+				</div>
+				<div class='grid__item'>
+					<div
+						class='grid__item-inner'
+						style='background-image:url(/images/photography/23.png)'
+					>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='hobbies__title'>
+			<h3>Visual manifestations of my mind's eye</h3>
+			<video loop autoplay poster='/images/timelapse.jpg'>
+				<source src='/videos/timelapse.mp4' type='video/mp4' />
+				<img
+					alt='drawing timeplase'
+					src='/images/timelapse.jpg'
+					title='No video playback capabilities'
+				/>
+			</video>
+			<a href='#' class='btn btn-outline p-10'>see my work</a>
+		</div>
+	</section>
+
+	<section class='blog'>
+		<div class='blog-cards-wrapper'>
+			<h1>I write about everything and nothing. Read my mind ramblings</h1>
+			<div class='blog-cards'>
+				<div class='blog-card' style='background-image: url(/images/blog/1_.jpg);'>
+					<div class='blog-card-description'>
+						<h3 class='title'>Title of my blog post</h3>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quod
+							quaerat nisi repudiandae esse ullam sunt itaque eius, temporibus
+							voluptate veniam odio corporis inventore accusamus hic molestiae
+							incidunt! Minima, explicabo.
+						</p>
+						<a href='#'>
+							<span>read more </span>
+							<img src='/icons/arrow.svg' alt='arrow' />
+						</a>
+					</div>
+				</div>
+				<div class='blog-card' style='background-image: url(/images/blog/2_.jpg);'>
+					<div class='blog-card-description'>
+						<h3 class='title'>Title of my blog post</h3>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quod
+							quaerat nisi repudiandae esse ullam sunt itaque eius, temporibus
+							voluptate veniam odio corporis inventore accusamus hic molestiae
+							incidunt! Minima, explicabo.
+						</p>
+						<a href='#'>
+							<span>read more </span>
+							<img src='/icons/arrow.svg' alt='arrow' />
+						</a>
+					</div>
+				</div>
+				<div class='blog-card' style='background-image: url(/images/blog/3_.jpg);'>
+					<div class='blog-card-description'>
+						<h3 class='title'>Title of my blog post</h3>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quod
+							quaerat nisi repudiandae esse ullam sunt itaque eius, temporibus
+							voluptate veniam odio corporis inventore accusamus hic molestiae
+							incidunt! Minima, explicabo.
+						</p>
+						<a href='#'>
+							<span>read more </span>
+							<img src='/icons/arrow.svg' alt='arrow' />
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<a href='#' class='btn btn-outline p-10'>read sum more</a>
+	</section>
+
+	<script src='../js/index.js'></script>
+</BaseLayout>

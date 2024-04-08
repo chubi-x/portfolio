@@ -11,7 +11,7 @@ import {
   ExpandImageEffect3,
   ExpandImageEffect4,
   ExpandImageEffect5
-} from './effects'
+} from './about-me-animations.js'
 // Registers the ScrollTrigger and Flip plugins with GSAP
 gsap.registerPlugin(ScrollTrigger, Flip)
 

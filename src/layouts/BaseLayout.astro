@@ -1,0 +1,52 @@
+---
+import '../styles/global.scss'
+
+import Footer from '../components/Footer.astro'
+import Navbar from '../components/Navbar.astro'
+const { title } = Astro.props
+---
+
+<html lang='en'>
+	<head>
+		<meta charset='utf-8' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<meta name='viewport' content='width=device-width' />
+		<title>{title}</title>
+	</head>
+	<body>
+		<Navbar />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+
+		<div class='to-top'></div>
+		<script>
+			import { ScrollTrigger } from 'gsap/ScrollTrigger'
+			import gsap from 'gsap'
+			gsap.registerPlugin(ScrollTrigger)
+			const footer = document.querySelector('footer')
+			const navbar = document.querySelector('.navbar')
+			// const tl = gsap.timeline({
+			// 	defaults: { ease: 'none' },
+			// 	scrollTrigger: {
+			// 		trigger: footer,
+			// 		start: 'top 30%',
+			// 		end: 'top top',
+			// 		scrub: true
+			// 	}
+			// })
+			// tl.to(
+			// 	navbar,
+			// 	{
+			// 		duration: 0.5,
+			// 		ease: 'power2',
+			// 		// stagger: 0.04,
+			// 		background: 'rgba(255, 255, 255, 0.3)',
+			// 		'--blur-filter': 'blur(10px)'
+			// 	},
+			// 	0
+			// )
+		</script>
+	</body>
+</html>

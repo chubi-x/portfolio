@@ -1,30 +1,3 @@
-nav.navbar {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 95%;
-  margin: 20px auto;
-  display: flex;
-  justify-content: space-between;
-  div.logo {
-    font-size: clamp(1.5rem, 0.8689rem + 2.8049vw, 4.375rem);
-  }
-  ul.nav-links {
-    width: 400px;
-    display: flex;
-    justify-content: space-between;
-
-    a {
-      text-decoration: none;
-      color: black;
-    }
-  }
-}
-main {
-  width: 100%;
-  height: 100%;
-}
-
 section.hero {
   height: 100vh;
   display: flex;
@@ -45,16 +18,6 @@ section.hero {
       justify-content: flex-end;
     }
   }
-  .social-links {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 120px;
-    margin-top: 20px;
-    .link img {
-      width: 24px;
-    }
-  }
 
   .hero-main {
     display: flex;
@@ -62,7 +25,7 @@ section.hero {
     width: 92%;
     height: auto;
     background-color: var(--grey);
-    padding-top: 120px;
+    padding-top: 10%;
 
     .subtitle {
       --subtitle-height: 50px;
@@ -71,7 +34,7 @@ section.hero {
       justify-content: flex-end;
       align-items: center;
       width: 80%;
-      height: 10%;
+      // height: 10%;
       margin: 0 auto;
       .rule {
         height: var(--subtitle-height);
@@ -106,17 +69,22 @@ section.hero {
         }
       }
       div.role {
-        margin-left: -5.6%;
+        margin-left: -4.2%;
         position: absolute;
         max-width: 50%;
 
         h1.role {
           text-transform: uppercase;
           font-weight: 500;
-          font-size: clamp(2.5rem, 0.9909rem + 8.4vw, 9.375rem);
+          font-size: clamp(2.5rem, 0.9909rem + 5.9vw, 9.375rem);
           margin: 0px;
           letter-spacing: -8px;
           line-height: 1em;
+          max-width: 600px;
+          span {
+            display: inline-block;
+            margin-right: 8px;
+          }
         }
       }
     }
@@ -124,7 +92,7 @@ section.hero {
       display: flex;
       flex-grow: 1;
       height: auto;
-      margin-top: 4%;
+      margin-top: 2%;
       &-left,
       &-right {
         margin-top: 8%;
@@ -208,13 +176,11 @@ section.hero {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  padding: 50px 12rem;
+  padding: 50px 15%;
   &-header {
-    h1 {
-      font-weight: normal;
-      font-size: clamp(1.25rem, 0.9756rem + 1.2195vw, 2.5rem);
-      text-align: center;
-    }
+    font-weight: normal;
+    font-size: clamp(1.25rem, 0.9756rem + 1.2195vw, 2.5rem);
+    text-align: center;
   }
   &-categories ul {
     display: flex;
@@ -259,7 +225,6 @@ section.hero {
     justify-content: space-between;
     row-gap: 40px;
     padding-top: 50px;
-    --card-radius: 25px;
     &-wrapper {
       display: flex;
       flex-grow: 1;
@@ -272,8 +237,8 @@ section.hero {
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      max-width: 30%;
-      height: 350px;
+      width: 48%;
+      height: 450px;
       border-radius: var(--card-radius);
       background-position: center;
 
@@ -312,17 +277,60 @@ section.hero {
         }
       }
     }
-    &-button {
-      margin-top: 50px;
-      border-color: var(--blue);
-      color: var(--blue);
-      background-color: white;
-      border-radius: 15px;
-      padding: 15px;
-      cursor: pointer;
-      font-family: 'NeueMontreal';
-      font-weight: 500;
-      font-size: 16px;
+  }
+  .btn-primary {
+    margin-top: 100px;
+    font-size: 20px;
+  }
+}
+section.blog {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .blog {
+    &-cards-wrapper {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      h1 {
+        font-size: clamp(1.5rem, 2vw, 6.5rem);
+
+        font-weight: 400;
+        text-align: center;
+        margin-bottom: 100px;
+      }
+    }
+    &-cards {
+      display: flex;
+      gap: 2%;
+      flex-grow: 1;
+      justify-content: center;
+      width: 100%;
+    }
+    &-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background-size: cover;
+      background-repeat: no-repeat;
+      flex-grow: 1;
+      border: 2px solid black;
+      border-radius: var(--card-radius);
+
+      &-description {
+        background: rgba(84, 84, 84, 0.3);
+        backdrop-filter: blur(10px);
+        padding: 20px;
+        color: white;
+        border-radius: 0px 0px var(--card-radius) var(--card-radius);
+        h3 {
+          margin: 0px;
+        }
+        a {
+          font-size: 14px;
+        }
+      }
     }
   }
 }

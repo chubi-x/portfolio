@@ -1,11 +1,14 @@
 section.hero {
   height: 100vh;
-  display: flex;
-
+  display: grid;
+  grid-template-columns:
+    [aside-start]
+    4% [aside-end spacer-start] 4%
+    [spacer-end hero-start] 92% [hero-end];
   aside {
-    width: 8%;
     height: 100%;
-    padding-right: 50px;
+    grid-area: 1 / aside-start / 2 / aside-end;
+    // padding-right: 50px;
     padding-left: 10px;
     display: flex;
     justify-content: center;
@@ -18,24 +21,36 @@ section.hero {
       justify-content: flex-end;
     }
   }
+  .spacer--column {
+    grid-area: 1 / aside-end / 2 / hero-start;
+    z-index: 1;
+    background-color: white;
+  }
 
   .hero-main {
-    display: flex;
-    flex-direction: column;
-    width: 92%;
+    --subtitle-height: 50px;
+    display: grid;
+    grid-area: 1 / spacer-start / 2 / hero-end;
+    grid-template-rows:
+      [subtitle-start] var(--subtitle-height)
+      [subtitle-end] calc(var(--subtitle-height) - 20px)
+      [title-start ] fit-content(200px)
+      [ title-end] 100px
+      [ rest-of-content-start ] auto [rest-of-content-end];
     height: auto;
     background-color: var(--grey);
     padding-top: 10%;
 
+    .spacer--row {
+      grid-area: title-end / 1 / rest-of-content-start / 1;
+    }
     .subtitle {
-      --subtitle-height: 50px;
-      position: absolute;
       display: flex;
       justify-content: flex-end;
       align-items: center;
       width: 80%;
-      // height: 10%;
       margin: 0 auto;
+      margin-top: 70px;
       .rule {
         height: var(--subtitle-height);
       }
@@ -52,39 +67,42 @@ section.hero {
       margin-top: 100px;
       display: flex;
       flex-direction: column;
-      .greetings {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        height: 100%;
-        h1 {
-          font-size: clamp(
-            0.75rem,
-            0.6402rem + 0.4878vw,
-            1.25rem
-          ); //min - 12px, max- 20px
-          font-weight: normal;
-          margin: 0px;
-          margin-right: 30px;
-        }
-      }
-      div.role {
-        margin-left: -4.2%;
-        position: absolute;
-        max-width: 50%;
+    }
+    .greetings {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      height: 100%;
+      z-index: 1;
+      margin-top: 80px;
 
-        h1.role {
-          text-transform: uppercase;
-          font-weight: 500;
-          font-size: clamp(2.5rem, 0.9909rem + 5.9vw, 9.375rem);
-          margin: 0px;
-          letter-spacing: -8px;
-          line-height: 1em;
-          max-width: 600px;
-          span {
-            display: inline-block;
-            margin-right: 8px;
-          }
+      h1 {
+        font-size: clamp(
+          0.75rem,
+          0.6402rem + 0.4878vw,
+          1.25rem
+        ); //min - 12px, max- 20px
+        font-weight: normal;
+        margin: 0px;
+        margin-right: 20px;
+      }
+    }
+    div.role {
+      max-width: 50%;
+      z-index: 1;
+      grid-area: title-start / 1 / rest-of-content-start / 1;
+      margin-top: 100px;
+      h1.role {
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: clamp(2.5rem, 0.9909rem + 5.5vw, 9.375rem);
+        margin: 0px;
+        letter-spacing: -8px;
+        line-height: 1em;
+        max-width: 600px;
+        span {
+          display: inline-block;
+          margin-right: 8px;
         }
       }
     }
@@ -92,10 +110,11 @@ section.hero {
       display: flex;
       flex-grow: 1;
       height: auto;
-      margin-top: 2%;
+      grid-area: title-end/ 1 / rest-of-content-end / 1;
+
       &-left,
       &-right {
-        margin-top: 8%;
+        // margin-top: 8%;
       }
       &-left {
         display: flex;

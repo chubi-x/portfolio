@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "chubiyojo-adejoh-portfolio",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -12,9 +12,10 @@
   "dependencies": {
     "@studio-freight/lenis": "^1.0.42",
     "astro": "^4.2.1",
+    "embla-carousel": "^8.0.2",
+    "embla-carousel-auto-scroll": "^8.0.2",
     "gsap": "^3.12.5",
-    "imagesloaded": "^5.0.0",
-    "swiper": "^11.1.0"
+    "imagesloaded": "^5.0.0"
   },
   "devDependencies": {
     "sass": "^1.72.0"

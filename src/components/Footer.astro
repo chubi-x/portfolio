@@ -1,5 +1,5 @@
 ---
-import 'swiper/css'
+
 ---
 
 <footer>
@@ -7,68 +7,19 @@ import 'swiper/css'
 		<h1>think we could create something beautiful?</h1>
 		<a href='#' class='btn btn-primary p-10'>lets do it!</a>
 	</div>
-	<div class='carousels'>
-		<div class='carousel swiper carousel-upper'>
-			<div class='carousel-wrapper swiper-wrapper'>
-				<div class='swiper-slide'>
-					<img src='/images/footer/22.jpg' alt='carousel' />
-				</div>
-				<div class='swiper-slide'>
-					<img src='/images/footer/9.jpg' alt='carousel' />
-				</div>
-				<div class='swiper-slide'>
-					<img src='/images/footer/34.jpg' alt='carousel' />
-				</div>
-				<div class='swiper-slide'>
-					<img src='/images/footer/22.jpg' alt='carousel' />
-				</div>
-				<div class='swiper-slide'>
-					<img src='/images/footer/29.jpg' alt='carousel' />
-				</div>
-				<div class='swiper-slide'>
-					<img src='/images/footer/28.jpg' alt='carousel' />
-				</div>
-
-				<div class='swiper-slide'>
-					<img src='/images/footer/34.jpg' alt='carousel' />
-				</div>
-			</div>
-		</div>
-
-		<div class='carousel carousel-lower'>
-			<div class='swiper-wrapper'>
-				<div class='swiper-slide'>
-					<img src='/images/footer/37.jpg' alt='carousel' />
-				</div>
-				<div class='swiper-slide'>
-					<img src='/images/footer/39.jpg' alt='carousel' />
-				</div>
-				<div class='swiper-slide'>
-					<img src='/images/footer/45.jpg' alt='carousel' />
-				</div>
-				<div class='swiper-slide'>
-					<img src='/images/footer/37.jpg' alt='carousel' />
-				</div>
-				<div class='swiper-slide'>
-					<img src='/images/footer/54.jpg' alt='carousel' />
-				</div>
-				<div class='swiper-slide'>
-					<img src='/images/footer/draw_.jpeg' alt='carousel' />
-				</div>
-				<div class='swiper-slide'>
-					<img src='/images/footer/45.jpg' alt='carousel' />
-				</div>
-			</div>
-		</div>
-	</div>
-
 	<div class='footer-links'>
-		<div class='logo'><a href='/'><img src='/public/images/logo_.png' alt='logo' /></a></div>
+		<div class='logo'>
+			<a href='/'>
+				<span data-z data-z-depth='2px'>
+					<img src='/images/logo_.png' alt='logo' /></span
+				></a
+			>
+		</div>
 		<div class='links'>
 			<ul class='social-links'>
-				<li><a href='#'>resume</a></li>
 				<li><a href='#'>projects</a></li>
 				<li><a href='/about'>about me</a></li>
+				<li><a href='#'>resume</a></li>
 				<li><a href='#'>blog</a></li>
 			</ul>
 
@@ -88,29 +39,29 @@ import 'swiper/css'
 </footer>
 
 <script>
-	import Swiper from 'swiper'
-	import { Autoplay, FreeMode } from 'swiper/modules'
-	import type { SwiperOptions } from 'swiper/types'
-	const swiperOpts: SwiperOptions = {
-		speed: 12000,
-		simulateTouch: false,
-		modules: [Autoplay, FreeMode],
-		slidesPerView: 4,
-		direction: 'horizontal',
-		spaceBetween: 20,
-		loop: true,
-		noSwiping: true,
-		allowTouchMove: false,
-		freeMode: {
-			enabled: true,
-			momentum: false,
-			momentumBounce: false
-		},
-		autoplay: {
-			delay: 0,
-			disableOnInteraction: false
-		}
-	}
-	const swiper = new Swiper('.swiper', swiperOpts)
-	const swiper2 = new Swiper('.carousel-lower', swiperOpts)
+	// import Swiper from 'swiper'
+	// import { Autoplay, FreeMode } from 'swiper/modules'
+	// import type { SwiperOptions } from 'swiper/types'
+	// const swiperOpts: SwiperOptions = {
+	// 	speed: 12000,
+	// 	simulateTouch: false,
+	// 	modules: [Autoplay, FreeMode],
+	// 	slidesPerView: 4,
+	// 	direction: 'horizontal',
+	// 	spaceBetween: 20,
+	// 	loop: true,
+	// 	noSwiping: true,
+	// 	allowTouchMove: false,
+	// 	freeMode: {
+	// 		enabled: true,
+	// 		momentum: false,
+	// 		momentumBounce: false
+	// 	},
+	// 	autoplay: {
+	// 		delay: 0,
+	// 		disableOnInteraction: false
+	// 	}
+	// }
+	// const swiper = new Swiper('.swiper', swiperOpts)
+	// const swiper2 = new Swiper('.carousel-lower', swiperOpts)
 </script>

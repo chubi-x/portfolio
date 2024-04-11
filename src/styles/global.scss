@@ -87,12 +87,18 @@ a {
   z-index: 3;
   left: 50%;
   transform: translateX(-50%);
-
-  width: 100%;
-  padding: 40px 0px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  width: 100%;
+  padding: 40px 0px;
+
+  .nav {
+    // width: 55%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   div.logo {
     // flex-grow: 1;
     position: absolute;
@@ -205,7 +211,7 @@ footer {
   }
   .logo {
     img {
-      width: 300px;
+      width: 200px;
     }
   }
   .footer-links {
@@ -256,4 +262,15 @@ footer {
       background-color: var(--green);
     }
   }
+}
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 15%;
+  min-width: 0;
 }

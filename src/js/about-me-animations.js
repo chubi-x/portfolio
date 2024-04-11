@@ -100,27 +100,6 @@ export class ExpandImageEffect2 {
         scrub: true
       }
     })
-    // .fromTo(
-    //   this.textBlock,
-    //   {
-    //     lineHeight: 1.2,
-    //     willChange: 'line-height'
-    //   },
-    //   {
-    //     ease: 'sine.inOut',
-    //     yPercent: -40,
-    //     skewX: -2,
-    //     lineHeight: 2,
-    //     opacity: 0.2,
-    //     scrollTrigger: {
-    //       trigger: this.textBlock,
-    //       start: 'top bottom',
-    //       end: 'bottom top',
-    //       scrub: true
-    //     }
-    //   },
-    //   0
-    // )
   }
 }
 

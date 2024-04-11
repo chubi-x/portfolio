@@ -56,6 +56,23 @@ const init = () => {
   })
 }
 
+// const tools = document.querySelector('.tools')
+// const frontend = document.querySelector('.frontend')
+// const backend = document.querySelector('.backend')
+
+// const tl = gsap.timeline({
+//   scrollTrigger: {
+//     trigger: tools,
+//     start: 'top center+=10',
+//     end: 'bottom top',
+//     scrub: true
+//   }
+// })
+
+// tl.to([frontend, backend], {
+//   xPercent: -10
+// })
+
 // Preloading images and initializing setup when complete
 preloadImages('.type__expand-img-inner').then(() => {
   init()

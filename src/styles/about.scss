@@ -27,20 +27,23 @@ html.lenis body {
 
 :root {
   font-size: 16px;
-  --color-text: #fff;
+  --color-text: black;
   --color-bg: rgb(96 111 140);
-  --color-link: #fff;
-  --color-link-hover: #fff;
+  --color-link: black;
+  --color-link-hover: black;
   --page-padding: 1rem 2rem;
 }
 
 body {
   margin: 0;
-  background-color: var(--color-bg);
-  background: url('/images/noise.png'),
-    radial-gradient(circle, var(--blue) 0%, var(--green) 100%);
-  background-size: 150px, 100% 100vh;
-  background-attachment: fixed;
+  //   background-color: var(--color-bg);
+  //   background: url('/images/noise.png'),
+  //     radial-gradient(circle, var(--blue) 0%, var(--green) 100%);
+  //   background-size: 150px, 100% 100vh;
+  //   background-attachment: fixed;
+}
+.z-layer:not(:first-child) {
+  filter: brightness(0.7);
 }
 
 .content {
@@ -184,17 +187,43 @@ body {
 
 .block {
   grid-area: block;
-  margin: 0px;
+  margin: 50px 0px;
   max-width: 400px;
   line-height: 1.5;
   font-size: 18px;
-  color: white;
+  color: black;
+  a {
+    color: black;
+    text-decoration: underline;
+  }
 }
-.quote {
-  grid-area: quote;
-  margin: 0px;
-}
+.tools {
+  width: 100%;
+  // padding: 0px 20rem;
+  margin-top: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+  h1 {
+    // margin-bottom: 50px;
+    font-weight: normal;
+    font-size: clamp(2rem, 1.75vw, 5rem);
+    text-align: center;
+  }
 
+  > * {
+    width: 90%;
+    h3 {
+      font-weight: normal;
+      font-size: clamp(2rem, 1vw, 5rem);
+      text-align: leftf;
+    }
+    img {
+      width: 120px;
+    }
+  }
+}
 @media screen and (min-width: 53em) {
   .content--left {
     grid-template-columns: 1fr 42%;
@@ -204,7 +233,7 @@ body {
   .content--center {
     text-align: center;
     place-items: center;
-    grid-template-areas: 'meta' 'type' 'quote' 'block';
+    grid-template-areas: 'meta' 'type' 'block';
     grid-template-rows: auto 40vw auto auto;
   }
   .content--center .type {

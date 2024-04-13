@@ -1,21 +1,15 @@
 ---
-
+const { name, description, thumbnail, link, tools } = Astro.props.project
 ---
 
-<div
-	class='card'
-	style='background-image: url("https://placehold.co/300x300/lightgrey/lightgrey");'
->
+<div class='card' style=`background-image: url("${thumbnail}");`>
 	<div class='card-description'>
-		<h3>Maliko Portfolio</h3>
+		<h3><a href={link}>{name}</a></h3>
 		<p>
-			Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt reprehenderit iusto
-			ipsum ad fugit
+			{description}
 		</p>
 		<div class='card-technologies'>
-			<span class='card-technologies-pill'>Javascript</span>
-			<span class='card-technologies-pill'>React</span>
-			<span class='card-technologies-pill'>CSS</span>
+			{tools?.map((tool) => <span class='card-technologies-pill'>{tool}</span>)}
 		</div>
 	</div>
 </div>

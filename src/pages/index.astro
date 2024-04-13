@@ -2,10 +2,66 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import '../styles/index.scss'
 import '../styles/hobbies.scss'
-import '../styles/about.scss'
+import ProjectCard from '../components/ProjectCard.astro'
+
+const projects = [
+	{
+		name: 'FiniteViz',
+		description:
+			'Web-based Finite Element Mesh Generator for creating and visualising Finite Element meshes on the web.',
+		link: 'https://github.com/chubi-x/FiniteViz',
+		thumbnail: '/images/projects/finiteViz.jpg',
+		tools: ['react', 'threejs', 'flask', 'redis', 'docker', 'rabbitmq']
+	},
+	{
+		name: 'Sorta',
+		description: 'an app that lets twitter users manage and categorize their bookmarks.',
+		link: 'https://github.com/chubi-x/sorta',
+		thumbnail: '/images/projects/sorta.jpg',
+		tools: ['typescript', 'react', 'tailwindcss', 'expressjs', 'firebase', 'twitterAPI']
+	},
+	{
+		name: 'OrthoForum',
+		description: 'Forum for Orthodox Christian Content.',
+		link: 'https://github.com/chubi-x/orthoforum',
+		thumbnail: '/images/projects/orthoforum.png',
+		tools: ['react', 'inertiajs', 'laravel', 'tailwindcss']
+	},
+	{
+		name: 'World Airports Dashboard',
+		description:
+			'A dashboard visualising US and World airport information, including international routes between countries and the relationship between airport count and annual C02 emissions.',
+		link: 'https://github.com/chubi-x/world-airports',
+		thumbnail: '/images/projects/airports.jpg',
+		tools: ['python', 'jupyter notebook', 'altair']
+	},
+	{
+		name: 'Sort-it-Image-Classifier',
+		description:
+			'Sort-it is an image classification application that classifies images of cats, dogs, bicycles, cars, and motorcycles.',
+		link: 'https://github.com/chubi-x/Sort-it-Image-Classifier',
+		thumbnail: '/images/projects/finiteViz.jpg',
+		tools: ['python', 'tensorflow', 'pandas']
+	},
+	{
+		name: 'England Dev Jobs',
+		description: 'Glassdoor webscrape for Developer jobs in England',
+		link: 'https://github.com/chubi-x/dev-jobs-in-england-scrape',
+		thumbnail: '/images/projects/finiteViz.jpg',
+		tools: ['python', 'selenium']
+	},
+
+	{
+		name: 'Ball Academy',
+		description: 'Landing page for a fictional basketball academy',
+		link: 'https://github.com/chubi-x/ball-academy-landing-page',
+		thumbnail: '/images/projects/finiteViz.jpg',
+		tools: ['sass', 'tailwindcss', 'javascript']
+	}
+]
 ---
 
-<BaseLayout title='about me'>
+<BaseLayout title='Chubi - Software Engineer'>
 	<div class='content content--left'>
 		<h2 class='type' data-expand-1>
 			hi, i'm chubi.<br />

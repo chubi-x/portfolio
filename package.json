@@ -15,9 +15,11 @@
     "embla-carousel": "^8.0.2",
     "embla-carousel-auto-scroll": "^8.0.2",
     "gsap": "^3.12.5",
-    "imagesloaded": "^5.0.0"
+    "imagesloaded": "^5.0.0",
+    "splitting": "^1.0.6"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.19",
     "sass": "^1.72.0"
   }
 }

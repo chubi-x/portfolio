@@ -2,9 +2,9 @@
 const { name, description, thumbnail, link, tools } = Astro.props.project
 ---
 
-<div class='card' style=`background-image: url("${thumbnail}");`>
+<a class='card' href=`${link}` style=`background-image: url("${thumbnail}");`>
 	<div class='card-description'>
-		<h3><a href={link}>{name}</a></h3>
+		<h3>{name}</h3>
 		<p>
 			{description}
 		</p>
@@ -12,4 +12,4 @@ const { name, description, thumbnail, link, tools } = Astro.props.project
 			{tools?.map((tool) => <span class='card-technologies-pill'>{tool}</span>)}
 		</div>
 	</div>
-</div>
+</a>

@@ -1,9 +1,8 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
 import '../styles/index.scss'
-import '../styles/hobbies.scss'
-import ProjectCard from '../components/ProjectCard.astro'
 
+import ProjectCard from '../components/ProjectCard.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
 const projects = [
 	{
 		name: 'FiniteViz',
@@ -11,7 +10,7 @@ const projects = [
 			'Web-based Finite Element Mesh Generator for creating and visualising Finite Element meshes on the web.',
 		link: 'https://github.com/chubi-x/FiniteViz',
 		thumbnail: '/images/projects/finiteViz.jpg',
-		tools: ['react', 'threejs', 'flask', 'redis', 'docker', 'rabbitmq']
+		tools: ['react', 'threejs', 'c++', 'flask', 'redis', 'docker', 'rabbitmq']
 	},
 	{
 		name: 'Sorta',
@@ -59,41 +58,83 @@ const projects = [
 		tools: ['sass', 'tailwindcss', 'javascript']
 	}
 ]
+
+const testimonials = [
+	{
+		name: 'Professor Wulf Dettmer',
+		job: 'Professor of Aerospace Engineering, Swansea University',
+		link: 'https://www.linkedin.com/in/wulf-dettmer-bbab09a/',
+		testimonial:
+			'Chubi did a very good job on his masters dissertation and it was a pleasure working with him. I learnt a lot myself and am keen to continue building on his work.'
+	},
+	{
+		name: 'Ojima Aniegboka',
+		job: 'Senior Product Designer, GoCo.io',
+		link: 'https://www.linkedin.com/in/ojima-aniegboka/',
+		testimonial:
+			'Chubi is not only a genius problem-solver but also an exceptional collaborator. His willingness to listen, share ideas, and work seamlessly within a team environment is truly admirable. He elevates the whole team with his expertise and positive attitude, making every project a success.'
+	},
+	{
+		name: 'Professor Wulf Dettmer',
+		job: 'Professor of Aerospace Engineering, Swansea University',
+		link: 'https://www.linkedin.com/in/wulf-dettmer-bbab09a/',
+		testimonial:
+			'Chubi did a very good job on his masters dissertation and it was a pleasure working with him. I learnt a lot myself and am keen to continue building on his work.'
+	},
+	{
+		name: 'Professor Wulf Dettmer',
+		job: 'Professor of Aerospace Engineering, Swansea University',
+		link: 'https://www.linkedin.com/in/wulf-dettmer-bbab09a/',
+		testimonial:
+			'Chubi did a very good job on his masters dissertation and it was a pleasure working with him. I learnt a lot myself and am keen to continue building on his work.'
+	},
+	{
+		name: 'Professor Wulf Dettmer',
+		job: 'Professor of Aerospace Engineering Swansea University',
+		link: 'https://www.linkedin.com/in/wulf-dettmer-bbab09a/',
+		testimonial:
+			'Chubi did a very good job on his masters dissertation and it was a pleasure working with him. I learnt a lot myself and am keen to continue building on his work.'
+	}
+]
 ---
 
 <BaseLayout title='Chubi - Software Engineer'>
-	<div class='content content--left'>
-		<h2 class='type' data-expand-1>
-			hi, i'm chubi.<br />
-			welcome<br />
-			to my
-			<span class='type__expand type__expand--inline type__expand--reveal'>
-				<span class='type__expand-img'>
-					<span
-						class='type__expand-img-inner'
-						style='background-image: url(/images/about/optimised/self.jpeg);'></span>
+	<section class='hero'>
+		<div class='content content-left'>
+			<h2 id='hero-text' class='text' data-expand-1 data-splitting>
+				hi, i'm chubi.<br />
+				welcome<br />
+				to my
+				<span class='expanding-text expanding-text--inline expanding-text--reveal'>
+					<span class='expanding-text-img'>
+						<span
+							class='expanding-text-img-inner'
+							style='background-image: url(/images/self3.jpeg);'></span>
+					</span>
+					<span class='anim skewed'>cyber space.</span>
 				</span>
-				<span class='anim skewed'>cyber space.</span>
-			</span>
-		</h2>
-		<p class='block'>
-			I'm a versatile full-stack software engineer driven by a passion for making beautiful
-			things. With over 3 years of diverse industry experience spanning e-commerce,
-			education, and my current role in the environmental sector, I specialize in developing
-			data-driven products that drive positive change on a global scale.
-		</p>
-	</div>
+			</h2>
+
+			<p class='block'>
+				I'm a versatile full-stack software engineer driven by a passion for making
+				beautiful things. With over 3 years of diverse industry experience spanning
+				e-commerce, education, and my current role in the environmental sector, I
+				specialize in developing data-driven products that drive positive change on a
+				global scale.
+			</p>
+		</div>
+	</section>
 	<div class='content content--center'>
-		<h3 class='meta'>Techne</h3>
-		<h2 class='type' data-expand-2>
+		<h3 class='title'>Techne</h3>
+		<h2 class='text' data-expand-2>
 			Technical skill <br />
 			is mastery of complexity<br />
-			<span class='type__expand type__expand--reveal type__expand--center'>
+			<span class='expanding-text expanding-text--reveal expanding-text--center'>
 				<span class='aright'>while </span>
-				<span class='type__expand-img'>
+				<span class='expanding-text-img'>
 					<span
-						class='type__expand-img-inner'
-						style='background-image: url(/images/about/optimised/self1.jpeg);'></span>
+						class='expanding-text-img-inner'
+						style='background-image: url(/images/self1.jpeg);'></span>
 				</span>
 				<span class='anim'>creativity</span>
 			</span>
@@ -111,207 +152,379 @@ const projects = [
 			balance complexity and simplicity in all my work. In other words, i use complex tools
 			to create simple solutions.
 		</p>
-
-		<div class='tools'>
-			<h1>The Tools I use</h1>
-
-			<div class='frontend-wrapper'>
-				<h3>Frontend</h3>
-				<div class='frontend embla'>
-					<div class='embla__container'>
-						<div class='embla__slide'>
-							<img src='/icons/html.svg' alt='html icon' />
-						</div>
-						<div class='embla__slide'>
-							<img src='/icons/css.svg' alt='css icon' />
-						</div>
-						<div class='embla__slide'>
-							<img src='/icons/tailwindcss.svg' alt='tailwindcss icon' />
-						</div>
-						<div class='embla__slide'>
-							<img src='/icons/bootstrap.svg' alt='bootstrap icon' />
-						</div>
-						<div class='embla__slide'>
-							<img src='/icons/sass.svg' alt='sass icon' />
-						</div>
-						<div class='embla__slide'>
-							<img src='/icons/js.svg' alt='javascript icon' />
-						</div>
-						<div class='embla__slide'>
-							<img src='/icons/jquery.svg' alt='jquery icon' />
-						</div>
-						<div class='embla__slide'>
-							<img src='/icons/react.svg' alt='react icon' />
-						</div>
-						<div class='embla__slide'>
-							<img src='/icons/reactquery.svg' alt='reactquery icon' />
-						</div>
+	</div>
+	<div class='tools'>
+		<h1>The Tools I use</h1>
+		<div class='frontend-wrapper'>
+			<h3>Frontend</h3>
+			<div class='frontend embla'>
+				<div class='embla__container'>
+					<div class='embla__slide'>
+						<img src='/icons/html.svg' alt='html icon' />
+						<p class='tool-name'>html</p>
+					</div>
+					<div class='embla__slide'>
+						<img src='/icons/css.svg' alt='css icon' />
+						<p class='tool-name'>css</p>
+					</div>
+					<div class='embla__slide'>
+						<img src='/icons/tailwindcss.svg' alt='tailwindcss icon' />
+						<p class='tool-name'>tailwindcss</p>
+					</div>
+					<div class='embla__slide'>
+						<img src='/icons/bootstrap.svg' alt='bootstrap icon' />
+						<p class='tool-name'>bootstrap</p>
+					</div>
+					<div class='embla__slide'>
+						<img src='/icons/sass.svg' alt='sass icon' />
+						<p class='tool-name'>sass</p>
+					</div>
+					<div class='embla__slide'>
+						<img src='/icons/js.svg' alt='javascript icon' />
+						<p class='tool-name'>javascript</p>
+					</div>
+					<div class='embla__slide'>
+						<img src='/icons/typescript.svg' alt='typescript icon' />
+						<p class='tool-name'>typescript</p>
+					</div>
+					<div class='embla__slide'>
+						<img src='/icons/jquery.svg' alt='jquery icon' />
+						<p class='tool-name'>jquery</p>
+					</div>
+					<div class='embla__slide'>
+						<img src='/icons/react.svg' alt='react icon' />
+						<p class='tool-name'>react</p>
+					</div>
+					<div class='embla__slide'>
+						<img src='/icons/reactquery.svg' alt='reactquery icon' />
+						<p class='tool-name'>reactquery</p>
+					</div>
+					<div class='embla__slide'>
+						<img src='/icons/html.svg' alt='html icon' />
+						<p class='tool-name'>html</p>
+					</div>
+					<div class='embla__slide'>
+						<img src='/icons/css.svg' alt='css icon' />
+						<p class='tool-name'>css</p>
+					</div>
+					<div class='embla__slide'>
+						<img src='/icons/tailwindcss.svg' alt='tailwindcss icon' />
+						<p class='tool-name'>tailwindcss</p>
 					</div>
 				</div>
 			</div>
-			<div class='backend-wrapper'>
-				<h3>Backend & Infra</h3>
-				<div class='backend embla'>
-					<div class='embla__container'>
-						<div class='embla__slide'>
-							<img src='/icons/linux.svg' alt='linux icon' />
-						</div>
-						<div class='embla__slide'>
-							<img src='/icons/python.svg' alt='python icon' />
-						</div>
-						<div class='embla__slide'>
-							<img src='/icons/node.svg' alt='node icon' />
-						</div>
-						<div class='embla__slide'>
-							<img src='/icons/django.svg' alt='django icon' />
-						</div>
-						<div class='embla__slide'>
-							<img src='/icons/git.svg' alt='git icon' />
-						</div>
-						<div class='embla__slide'>
-							<img src='/icons/docker.svg' alt='docker icon' />
-						</div>
-						<div class='embla__slide'>
-							<img src='/icons/nginx.svg' alt='nginx icon' />
-						</div>
-						<div class='embla__slide'>
-							<img src='/icons/postgresql.svg' alt='postgresql icon' />
-						</div>
-						<div class='embla__slide'>
-							<img src='/icons/aws.svg' alt='aws icon' />
-						</div>
-						<div class='embla__slide'>
-							<img src='/icons/jenkins.svg' alt='jenkins icon' />
-						</div>
-						<div class='embla__slide'>
-							<img src='/icons/rabbitmq.svg' alt='rabbitmq icon' />
-						</div>
+		</div>
+		<div class='backend-wrapper'>
+			<h3>Backend & Infra</h3>
+			<div class='backend embla'>
+				<div class='embla__container'>
+					<div class='embla__slide'>
+						<img src='/icons/linux.svg' alt='linux icon' />
+						<p class='tool-name'>linux</p>
+					</div>
+
+					<div class='embla__slide'>
+						<img src='/icons/java.svg' alt='java icon' />
+						<p class='tool-name'>java</p>
+					</div>
+					<div class='embla__slide'>
+						<img src='/icons/cplusplus.svg' alt='cplusplus icon' />
+						<p class='tool-name'>c++</p>
+					</div>
+					<div class='embla__slide'>
+						<img src='/icons/python.svg' alt='python icon' />
+						<p class='tool-name'>python</p>
+					</div>
+					<div class='embla__slide'>
+						<img src='/icons/node.svg' alt='node icon' />
+						<p class='tool-name'>nodejs</p>
+					</div>
+					<div class='embla__slide'>
+						<img src='/icons/django.svg' alt='django icon' />
+						<p class='tool-name'>django</p>
+					</div>
+					<div class='embla__slide'>
+						<img src='/icons/nestjs.svg' alt='nestjs icon' />
+						<p class='tool-name'>nestjs</p>
+					</div>
+					<div class='embla__slide'>
+						<img src='/icons/git.svg' alt='git icon' />
+						<p class='tool-name'>git</p>
+					</div>
+					<div class='embla__slide'>
+						<img src='/icons/docker.svg' alt=' icon' />
+						<p class='tool-name'>docker</p>
+					</div>
+					<div class='embla__slide'>
+						<img src='/icons/nginx.svg' alt='nginx icon' />
+						<p class='tool-name'>nginx</p>
+					</div>
+					<div class='embla__slide'>
+						<img src='/icons/postgresql.svg' alt='postgresql icon' />
+						<p class='tool-name'>postgresql</p>
+					</div>
+					<div class='embla__slide'>
+						<img src='/icons/aws.svg' alt='aws icon' />
+						<p class='tool-name'>aws</p>
+					</div>
+					<div class='embla__slide'>
+						<img src='/icons/jenkins.svg' alt='jenkins icon' />
+						<p class='tool-name'>jenkins</p>
+					</div>
+					<div class='embla__slide'>
+						<img src='/icons/rabbitmq.svg' alt='rabbitmq icon' />
+						<p class='tool-name'>rabbitmq</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class='content content--right'>
-		<h3 class='meta'>Project 3</h3>
-		<h2 class='type' data-expand-3>
-			Let the miles unfurl<br />
-			like stories each<br />
-			<span class='type__expand type__expand--full'>
-				<span class='type__expand-img'>
-					<span
-						class='type__expand-img-inner'
-						style='background-image: url(/images/about/optimised/3.jpeg);'></span>
+	<section class='projects'>
+		<h1 class='projects-header'>Stuff I've Built</h1>
+		<div class='projects-cards-wrapper'>
+			<div class='projects-cards'>
+				{projects.slice(0, 4).map((project) => <ProjectCard project={project} />)}
+			</div>
+			<a href='/projects' rel='noopener' target='_blank' class='btn btn-outline p-10'
+				>see more</a
+			>
+		</div>
+	</section>
+
+	<section class='testimonials'>
+		<h1>From People I've Worked With</h1>
+		<div class='testimonial-cards-wrapper embla'>
+			<div class='testimonial-cards embla__container'>
+				{
+					testimonials.map((person) => (
+						<div class='testimonial-card embla__slide'>
+							<p>{person.testimonial}</p>
+							<h3 class='name'>
+								<a href={person.link} rel='noopener' target='_blank'>
+									{person.name}
+								</a>
+							</h3>
+							<span class='job'>{person.job}</span>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<section class='hobbies'>
+		<div class='content content--right'>
+			<h3 class='title'>Hobbies</h3>
+			<h2 class='text' data-expand-3>
+				I am not an artist<br />
+				or a photographer<br />
+				<span class='expanding-text expanding-text--full'>
+					<span class='expanding-text-img'>
+						<span
+							class='expanding-text-img-inner'
+							style='background-image: url(/images/8.jpeg);'></span>
+					</span>
 				</span>
-			</span>
-			one a breath in the<br />
-			saga of the soul.
-		</h2>
-		<p class='block'>
-			As we delve deeper into the mysteries of the cosmos, we encounter the profound
-			realization that the universe itself breathes in a rhythm of creation and dissolution,
-			a cosmic dance that mirrors the cycles of life and death on our own planet. Stars are
-			born from the dust, shining fiercely against the dark, only to eventually fade or
-			explode in a dazzling finale, their remnants seeding future stars, planets, and
-			perhaps, life itself. This celestial cycle reflects the very essence of the Dao,
-			emphasizing the interconnectedness of all things, the perpetual motion and
-			transformation that is the hallmark of existence.
-		</p>
-	</div>
-	<div class='content content--justify'>
-		<h3 class='meta'>Project 4</h3>
-		<h2 class='type' data-expand-4>
-			Soar above
-			<span class='type__expand type__expand--stack'>
-				<span class='anim rotated'>peaks</span>
-				<span class='type__expand-img type__expand-img--small'>
-					<span
-						class='type__expand-img-inner'
-						style='background-image: url(/images/about/optimised/1.jpeg);'></span>
-				</span>
-			</span>
-			into
-			<span class='type__expand type__expand--stack'>
-				<span class='anim rotated'>clouds,</span>
-				<span class='type__expand-img type__expand-img--small'>
-					<span
-						class='type__expand-img-inner'
-						style='background-image: url(/images/about/optimised/5.png);'></span>
-				</span>
-			</span>
-			<br />
-			and the whispers of the wind<br />
-			like
-			<span class='type__expand type__expand--stack'>
-				<span class='type__expand-img type__expand-img--small'>
-					<span
-						class='type__expand-img-inner'
-						style='background-image: url(/images/about/optimised/6.jpeg);'></span>
-				</span>
-				<span class='anim rotated'>echoes,</span>
-			</span>
-			in the wast sky.
-		</h2>
-		<p class='block aright'>
-			In this grand scheme, our human concerns, our joys and sorrows, ambitions and fears,
-			are but echoes of the universal patterns of change and continuity. The Dao teaches us
-			to see beyond the illusion of permanence, to embrace change as the only constant. It
-			invites us to let go of our rigid expectations and to flow with the natural order of
-			things, finding peace in the acceptance that we are part of something far greater, a
-			narrative written not just across the ages, but across the endless expanse of space and
-			time.
-		</p>
-	</div>
-	<div class='content content--line'>
-		<h3 class='meta'>Project 5</h3>
-		<h2 class='type' data-expand-5>
-			Sail
-			<span class='type__expand type__expand--mini'>
-				<span class='type__expand-img type__expand-img--tiny'>
-					<span
-						class='type__expand-img-inner'
-						style='background-image: url(/images/about/optimised/7.jpeg);'></span>
-				</span>
-			</span>
-			across the cosmic
-			<span class='type__expand type__expand--mini'>
-				<span class='type__expand-img type__expand-img--tiny'>
-					<span
-						class='type__expand-img-inner'
-						style='background-image: url(/images/about/optimised/8.jpeg);'></span>
-				</span>
-			</span>
-			sea,<br />
-			where stars compose
-			<span class='type__expand type__expand--mini'>
-				<span class='type__expand-img type__expand-img--tiny'>
-					<span
-						class='type__expand-img-inner'
-						style='background-image: url(/images/about/optimised/9.jpeg);'></span>
-				</span>
-			</span>
-			the melody<br />
-			of the universe, weaving the
-			<span class='type__expand type__expand--mini'>
-				<span class='type__expand-img type__expand-img--tiny'>
-					<span
-						class='type__expand-img-inner'
-						style='background-image: url(/images/about/optimised/11.png);'></span>
-				</span>
-			</span>
-			grand<br />
-			tapestry of existence into<br />
-			an endless dance.
-		</h2>
-		<p class='block aleft'>
-			This perspective imbues our lives with a sense of wonder and humility, urging us to
-			live with intention, to cherish each moment as a precious thread in the intricate weave
-			of the universe. It challenges us to find balance within ourselves and in our
-			interactions with the world around us, to seek not dominion, but harmony, recognizing
-			that in the grand cosmic dance, every step, every turn, contributes to the beauty of
-			the whole.
-		</p>
-	</div>
+				I draw un-symmetric lines<br />
+				and take subpar pictures.
+			</h2>
+			<p class='block'>
+				When I was 15 I discovered I enjoyed snapping pics on my phone. At 18 I discovered
+				I enjoyed scribbling lines on paper. What you're about to see is my exploration of
+				how bad I am at both. Scroll at your own peril.
+			</p>
+		</div>
+		<div class='hobbies-grid hobbies-grid--4'>
+			<div class='hobbies-grid-wrap'>
+				<div class='hobbies-grid__item'>
+					<div
+						class='hobbies-grid__item-inner'
+						style='background-image:url(/images/photography/1.png)'
+					>
+					</div>
+				</div>
+				<div class='hobbies-grid__item'>
+					<div
+						class='hobbies-grid__item-inner'
+						style='background-image:url(/images/photography/2.png)'
+					>
+					</div>
+				</div>
+				<div class='hobbies-grid__item'>
+					<div
+						class='hobbies-grid__item-inner'
+						style='background-image:url(/images/photography/3.png)'
+					>
+					</div>
+				</div>
+				<div class='hobbies-grid__item'>
+					<div
+						class='hobbies-grid__item-inner'
+						style='background-image:url(/images/photography/4.png)'
+					>
+					</div>
+				</div>
+				<div class='hobbies-grid__item'>
+					<div
+						class='hobbies-grid__item-inner'
+						style='background-image:url(/images/photography/5.png)'
+					>
+					</div>
+				</div>
+				<div class='hobbies-grid__item'>
+					<div
+						class='hobbies-grid__item-inner'
+						style='background-image:url(/images/photography/6.png)'
+					>
+					</div>
+				</div>
+				<div class='hobbies-grid__item'>
+					<div
+						class='hobbies-grid__item-inner'
+						style='background-image:url(/images/photography/7.png)'
+					>
+					</div>
+				</div>
+				<div class='hobbies-grid__item'>
+					<div
+						class='hobbies-grid__item-inner'
+						style='background-image:url(/images/photography/19.png)'
+					>
+					</div>
+				</div>
+				<div class='hobbies-grid__item'>
+					<div
+						class='hobbies-grid__item-inner'
+						style='background-image:url(/images/photography/8.png)'
+					>
+					</div>
+				</div>
+				<div class='hobbies-grid__item'>
+					<div
+						class='hobbies-grid__item-inner'
+						style='background-image:url(/images/photography/9.png)'
+					>
+					</div>
+				</div>
+				<div class='hobbies-grid__item'>
+					<div
+						class='hobbies-grid__item-inner'
+						style='background-image:url(/images/photography/10.png)'
+					>
+					</div>
+				</div>
+				<div class='hobbies-grid__item'>
+					<div
+						class='hobbies-grid__item-inner'
+						style='background-image:url(/images/photography/11.png)'
+					>
+					</div>
+				</div>
+				<div class='hobbies-grid__item'>
+					<div
+						class='hobbies-grid__item-inner'
+						style='background-image:url(/images/photography/12.png)'
+					>
+					</div>
+				</div>
+				<div class='hobbies-grid__item'>
+					<div
+						class='hobbies-grid__item-inner'
+						style='background-image:url(/images/photography/13.jpg)'
+					>
+					</div>
+				</div>
+				<div class='hobbies-grid__item'>
+					<div
+						class='hobbies-grid__item-inner'
+						style='background-image:url(/images/photography/14.jpg)'
+					>
+					</div>
+				</div>
+				<div class='hobbies-grid__item'>
+					<div
+						class='hobbies-grid__item-inner'
+						style='background-image:url(/images/photography/15.png)'
+					>
+					</div>
+				</div>
+				<div class='hobbies-grid__item'>
+					<div
+						class='hobbies-grid__item-inner'
+						style='background-image:url(/images/photography/16.png)'
+					>
+					</div>
+				</div>
+				<div class='hobbies-grid__item'>
+					<div
+						class='hobbies-grid__item-inner'
+						style='background-image:url(/images/photography/17.jpg)'
+					>
+					</div>
+				</div>
+				<div class='hobbies-grid__item'>
+					<div
+						class='hobbies-grid__item-inner'
+						style='background-image:url(/images/photography/18.png)'
+					>
+					</div>
+				</div>
+				<div class='hobbies-grid__item'>
+					<div
+						class='hobbies-grid__item-inner'
+						style='background-image:url(/images/photography/19.png)'
+					>
+					</div>
+				</div>
+				<div class='hobbies-grid__item'>
+					<div
+						class='hobbies-grid__item-inner'
+						style='background-image:url(/images/photography/20.png)'
+					>
+					</div>
+				</div>
+				<div class='hobbies-grid__item'>
+					<div
+						class='hobbies-grid__item-inner'
+						style='background-image:url(/images/photography/21.png)'
+					>
+					</div>
+				</div>
+				<div class='hobbies-grid__item'>
+					<div
+						class='hobbies-grid__item-inner'
+						style='background-image:url(/images/photography/22.jpg)'
+					>
+					</div>
+				</div>
+				<div class='hobbies-grid__item'>
+					<div
+						class='hobbies-grid__item-inner'
+						style='background-image:url(/images/photography/23.png)'
+					>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='hobbies__title'>
+			<div id='video-cursor'>Pause</div>
+			<h3>Visual manifestations of my mind's eye</h3>
+			<video loop autoplay poster='/images/poster.jpeg'>
+				<source src='/videos/timelapse.mp4' type='video/mp4' />
+				<img
+					alt='a timelapse of me drawing abstract art'
+					src='/images/poster.jpeg'
+					title='No video playback capabilities'
+				/>
+			</video>
+			<!-- <img
+				src='/images/photography/draw.webp'
+				alt=' '
+			/> -->
+			<a href='#' class='btn btn-outline p-10'>see my work</a>
+		</div>
+	</section>
 	<section class='blog'>
 		<div class='blog-cards-wrapper'>
 			<h1>I write about everything and nothing. Read my mind ramblings</h1>
@@ -373,7 +586,11 @@ const projects = [
 		const options: EmblaOptionsType = { loop: true, dragFree: true }
 		carousels.forEach((carousel, index) => {
 			EmblaCarousel(carousel, options, [
-				AutoScroll({ playOnInit: true, stopOnInteraction: false })
+				AutoScroll({
+					playOnInit: true,
+					stopOnInteraction: false,
+					speed: carousel.classList.contains('testimonial-cards-wrapper') ? 1 : 2
+				})
 			])
 		})
 	</script>

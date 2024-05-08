@@ -1,11 +1,13 @@
 // Preload images
 import imagesLoaded from 'imagesloaded'
-const preloadImages = (selector = 'img') => {
+const preloadImages = selectors => {
   return new Promise(resolve => {
-    imagesLoaded(
-      document.querySelectorAll(selector),
-      { background: true },
-      resolve
+    selectors.forEach(selector =>
+      imagesLoaded(
+        document.querySelectorAll(selector),
+        { background: true },
+        resolve
+      )
     )
   })
 }

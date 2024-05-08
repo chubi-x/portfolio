@@ -2,8 +2,14 @@
 
 ---
 
-<nav class='navbar'>
+<header class='navbar'>
 	<div class='nav'>
+		<div class='cross-asset'>
+			<img
+				src='/images/asset.png'
+				alt='a graphic of a cross, circle and eye-like shape with an upside-down cross'
+			/>
+		</div>
 		<div class='logo'>
 			<a href='/'>
 				<span data-z data-z-depth='1px'>
@@ -11,12 +17,154 @@
 				></a
 			>
 		</div>
-		<ul class='nav-links'>
-			<li><a href='#'> projects </a></li>
-			<li><a href='/about'> about me </a></li>
-			<li><a href='#'> resume </a></li>
-			<li><a href='#'> blog </a></li>
-			<li><a class='btn btn-outline' href='#'> hmu </a></li>
-		</ul>
+		<button class='menu-button open-menu' aria-label='Open menu'>
+			<svg width='19' height='12' viewBox='0 0 19 12'>
+				<path
+					d='m.742 3.26.485.874c.043-.024.13-.07.26-.136.22-.11.476-.233.765-.361A22.92 22.92 0 0 1 4.997 2.62c4.476-1.34 8.75-1.219 12.241 1.1.18.12.357.245.531.376l.6-.8a12.46 12.46 0 0 0-.578-.408C14.008.375 9.443.246 4.71 1.663c-1.037.31-2 .675-2.865 1.06a18.83 18.83 0 0 0-1.103.536Z'
+				></path>
+				<path
+					d='m.742 6.748.485.874c.043-.023.13-.07.26-.135.22-.111.476-.233.765-.362A22.92 22.92 0 0 1 4.997 6.11c4.476-1.34 8.75-1.22 12.241 1.1.18.12.357.245.531.375l.6-.8a12.46 12.46 0 0 0-.578-.408C14.008 3.864 9.443 3.735 4.71 5.152c-1.037.31-2 .675-2.865 1.06a18.83 18.83 0 0 0-1.103.536Z'
+				></path>
+				<path
+					d='m.742 10.237.485.874c.043-.024.13-.07.26-.136.22-.11.476-.232.765-.36a22.92 22.92 0 0 1 2.745-1.016c4.476-1.34 8.75-1.22 12.241 1.1.18.12.357.244.531.375l.6-.8a12.46 12.46 0 0 0-.578-.408C14.008 7.353 9.443 7.224 4.71 8.64c-1.037.31-2 .674-2.865 1.06a18.83 18.83 0 0 0-1.103.536Z'
+				></path>
+			</svg>
+		</button>
+
+		<div class='menu-wrap'>
+			<div class='tiles'>
+				<div class='tiles__line'>
+					<div
+						class='tiles__line-img tiles__line-img--large'
+						style='background-image:url(/images/photography/chair.png)'
+					>
+					</div>
+					<div
+						class='tiles__line-img'
+						style='background-image:url(/images/photography/5.png)'
+					>
+					</div>
+					<div
+						class='tiles__line-img'
+						style='background-image:url(/images/photography/6.png)'
+					>
+					</div>
+					<div
+						class='tiles__line-img tiles__line-img--large'
+						style='background-image:url(/images/photography/chair.png)'
+					>
+					</div>
+					<div
+						class='tiles__line-img'
+						style='background-image:url(/images/photography/5.png)'
+					>
+					</div>
+					<div
+						class='tiles__line-img'
+						style='background-image:url(/images/photography/6.png)'
+					>
+					</div>
+				</div>
+				<div class='tiles__line'>
+					<div
+						class='tiles__line-img'
+						style='background-image:url(/images/photography/1.png)'
+					>
+					</div>
+					<div
+						class='tiles__line-img'
+						style='background-image:url(/images/photography/2.png)'
+					>
+					</div>
+					<div
+						class='tiles__line-img tiles__line-img--large'
+						style='background-image:url(/images/photography/lugard.png)'
+					>
+					</div>
+					<div
+						class='tiles__line-img'
+						style='background-image:url(/images/photography/1.png)'
+					>
+					</div>
+					<div
+						class='tiles__line-img'
+						style='background-image:url(/images/photography/2.png)'
+					>
+					</div>
+					<div
+						class='tiles__line-img tiles__line-img--large'
+						style='background-image:url(/images/photography/lugard.png)'
+					>
+					</div>
+				</div>
+				<div class='tiles__line'>
+					<div
+						class='tiles__line-img'
+						style='background-image:url(/images/photography/7.png)'
+					>
+					</div>
+					<div
+						class='tiles__line-img tiles__line-img--large'
+						style='background-image:url(/images/photography/bus.png)'
+					>
+					</div>
+					<div
+						class='tiles__line-img'
+						style='background-image:url(/images/photography/9.png)'
+					>
+					</div>
+					<div
+						class='tiles__line-img'
+						style='background-image:url(/images/photography/22.jpg)'
+					>
+					</div>
+					<div
+						class='tiles__line-img tiles__line-img--large'
+						style='background-image:url(/images/photography/bus.png)'
+					>
+					</div>
+					<div
+						class='tiles__line-img'
+						style='background-image:url(/images/photography/9.png)'
+					>
+					</div>
+				</div>
+			</div>
+			<nav class='menu'>
+				<a class='menu__item' href='/projects'> projects </a>
+				<a class='menu__item' href='/resume'> resume </a>
+				<a class='menu__item' href='/art'> art </a>
+				<a class='menu__item' href='/blog'> blog </a>
+				<a class='menu__item' href='/contact'> contact </a>
+			</nav>
+			<button class='menu-button button-close'>
+				<svg width='19' height='12' viewBox='0 0 19 12'>
+					<path
+						d='m.742 3.26.485.874c.043-.024.13-.07.26-.136.22-.11.476-.233.765-.361A22.92 22.92 0 0 1 4.997 2.62c4.476-1.34 8.75-1.219 12.241 1.1.18.12.357.245.531.376l.6-.8a12.46 12.46 0 0 0-.578-.408C14.008.375 9.443.246 4.71 1.663c-1.037.31-2 .675-2.865 1.06a18.83 18.83 0 0 0-1.103.536Z'
+					></path>
+					<path
+						d='m.742 6.748.485.874c.043-.023.13-.07.26-.135.22-.111.476-.233.765-.362A22.92 22.92 0 0 1 4.997 6.11c4.476-1.34 8.75-1.22 12.241 1.1.18.12.357.245.531.375l.6-.8a12.46 12.46 0 0 0-.578-.408C14.008 3.864 9.443 3.735 4.71 5.152c-1.037.31-2 .675-2.865 1.06a18.83 18.83 0 0 0-1.103.536Z'
+					></path>
+					<path
+						d='m.742 10.237.485.874c.043-.024.13-.07.26-.136.22-.11.476-.232.765-.36a22.92 22.92 0 0 1 2.745-1.016c4.476-1.34 8.75-1.22 12.241 1.1.18.12.357.244.531.375l.6-.8a12.46 12.46 0 0 0-.578-.408C14.008 7.353 9.443 7.224 4.71 8.64c-1.037.31-2 .674-2.865 1.06a18.83 18.83 0 0 0-1.103.536Z'
+					></path>
+				</svg>
+			</button>
+		</div>
+		<!-- From https://codepen.io/sebastien-gilbert/pen/VwLzvGV?editors=1010 -->
+
+		<!-- Edit the paths here: https://yqnn.github.io/svg-path-editor/ -->
+		<svg
+			class='overlay'
+			width='100%'
+			height='100%'
+			viewBox='0 0 100 100'
+			preserveAspectRatio='none'
+		>
+			<path
+				class='overlay__path'
+				vector-effect='non-scaling-stroke'
+				d='M 0 100 V 100 Q 50 100 100 100 V 100 z'></path>
+		</svg>
 	</div>
-</nav>
+</header>

@@ -156,50 +156,13 @@ const stickyTools = () => {
     )
 }
 
-const videoCursorFollower = () => {
+const toggleVideo = () => {
   const video = document.querySelector('video')
-  const videoCursor = document.getElementById('video-cursor')
-  const setCursorText = () => {
-    if (video.paused) {
-      videoCursor.innerText = 'Play'
-    } else {
-      videoCursor.innerText = 'Pause'
-    }
+  if (video.paused) {
+    video.play()
   }
-  setCursorText()
-  const followCursor = event => {
-    videoCursor.style.left = event.clientX + 'px'
-    videoCursor.style.top = event.clientY + 'px'
-  }
-  const toggleVideo = () => {
-    if (video.paused) {
-      video.play()
-    } else {
-      video.pause()
-    }
-    setCursorText()
-  }
-  const toggleFollower = enter => {
-    videoCursor.style.visibility = enter ? 'visible' : 'hidden'
-    videoCursor.style.opacity = enter ? 1 : 0
-    enter
-      ? document.body.addEventListener('mousemove', followCursor)
-      : document.body.removeEventListener('mousemove', followCursor)
-  }
-  video.addEventListener('click', () => toggleVideo())
-  video.addEventListener('mouseenter', () => toggleFollower(true))
-  video.addEventListener('mouseleave', () => toggleFollower(false))
-
-  const removeEventListeners = () => {
-    video.removeEventListener('click', () => toggleVideo())
-    video.removeEventListener('mouseenter', () => toggleFollower(true))
-    video.removeEventListener('mouseleave', () => toggleFollower(false))
-  }
-  //remove event listeners when video scrolls out of view
-  const videoObserver = new IntersectionObserver(removeEventListeners, {})
-  videoObserver.observe(video)
 }
-videoCursorFollower()
+toggleVideo()
 
 const openNav = () => {
   // credit: https://tympanus.net/Development/Theodore/
@@ -362,5 +325,6 @@ preloadImages([
   heroTextAnimation()
   animateHobbies()
   stickyTools()
+
   document.querySelector('.loading').classList.remove('loading')
 })

@@ -338,7 +338,10 @@ function toggleDarkMode () {
       setTimeout(() => document.body.setAttribute('data-theme', 'light'), 600)
     } else {
       setDarkMode('yes')
-      darkModeCircle.classList.add('dark-mode-circle--dark')
+      darkModeCircle.classList.add(
+        'dark-mode-circle--dark',
+        'dark-mode-circle--dark-animate'
+      )
       darkModeCircle.classList.remove('dark-mode-circle--light')
       setTimeout(() => document.body.setAttribute('data-theme', 'dark'), 600)
     }

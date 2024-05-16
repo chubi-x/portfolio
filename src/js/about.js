@@ -15,7 +15,7 @@ import {
 
 gsap.registerPlugin(ScrollTrigger, Flip)
 
-const initSmoothScrolling = () => {
+function initSmoothScrolling () {
   const lenis = new Lenis({
     lerp: 0.1, // Lower values create a smoother scroll effect
     smoothWheel: true
@@ -24,7 +24,7 @@ const initSmoothScrolling = () => {
     ScrollTrigger.update()
   })
 
-  const scrollFn = time => {
+  function scrollFn (time) {
     lenis.raf(time)
     requestAnimationFrame(scrollFn)
   }
@@ -33,7 +33,7 @@ const initSmoothScrolling = () => {
 
 initSmoothScrolling()
 
-const expandAnims = () => {
+function expandAnims () {
   const effects = [
     { selector: '[data-expand-1]', effect: ExpandImageEffect1 },
     { selector: '[data-expand-2]', effect: ExpandImageEffect2 },
@@ -47,7 +47,7 @@ const expandAnims = () => {
   })
 }
 
-const animateHobbies = () => {
+function animateHobbies () {
   const hobbiesGrid = document.querySelector('.hobbies-grid')
   const gridWrap = hobbiesGrid.querySelector('.hobbies-grid-wrap')
   const gridItems = hobbiesGrid.querySelectorAll('.hobbies-grid__item')
@@ -111,7 +111,7 @@ const animateHobbies = () => {
       0
     )
 }
-const heroTextAnimation = () => {
+function heroTextAnimation () {
   Splitting()
   const heroText = document.getElementById('hero-text')
   const chars = heroText.querySelectorAll('.char')
@@ -132,7 +132,7 @@ const heroTextAnimation = () => {
   )
 }
 
-const stickyTools = () => {
+function stickyTools () {
   const testimonials = document.querySelector('.testimonials')
   gsap
     .timeline({
@@ -156,7 +156,7 @@ const stickyTools = () => {
     )
 }
 
-const toggleVideo = () => {
+function toggleVideo () {
   const video = document.querySelector('video')
   if (video.paused) {
     video.play()
@@ -164,10 +164,10 @@ const toggleVideo = () => {
 }
 toggleVideo()
 
-const openNav = () => {
+function openNav () {
   // credit: https://tympanus.net/Development/Theodore/
 
-  const overlayPath = document.querySelector('.overlay__path')
+  const overlayPath = document.querySelector('.nav-menu-path')
   const menuWrap = document.querySelector('.menu-wrap')
   const menuItems = menuWrap.querySelectorAll('.menu__item')
   const openMenuCtrl = document.querySelector('button.open-menu')
@@ -177,7 +177,7 @@ const openNav = () => {
   let isAnimating = false
 
   // opens the menu
-  const openMenu = () => {
+  function openMenu () {
     if (isAnimating) return
     isAnimating = true
     gsap
@@ -244,7 +244,7 @@ const openNav = () => {
   }
 
   // closes the menu
-  const closeMenu = () => {
+  function closeMenu () {
     if (isAnimating) return
     isAnimating = true
     gsap
@@ -252,38 +252,38 @@ const openNav = () => {
         onComplete: () => (isAnimating = false)
       })
       .set(overlayPath, {
-        attr: { d: 'M 0 0 V 0 Q 50 0 100 0 V 0 z' }
+        attr: { d: 'M 0 0 V 0 Q 50 0 100 0 V 0 z' } //start as a line
       })
       .to(
         overlayPath,
         {
           duration: 0.8,
           ease: 'power4.in',
-          attr: { d: 'M 0 0 V 50 Q 50 100 100 50 V 0 z' }
+          attr: { d: 'M 0 0 V 50 Q 50 100 100 50 V 0 z' } //curve on bottom
         },
         0
       )
       .to(overlayPath, {
         duration: 0.3,
         ease: 'power2',
-        attr: { d: 'M 0 0 V 100 Q 50 100 100 100 V 0 z' },
+        attr: { d: 'M 0 0 V 100 Q 50 100 100 100 V 0 z' }, //cover entire screen
         onComplete: () => {
           menuWrap.classList.remove('menu-wrap--open')
         }
       })
       // now reveal
       .set(overlayPath, {
-        attr: { d: 'M 0 100 V 0 Q 50 0 100 0 V 100 z' }
+        attr: { d: 'M 0 100 V 0 Q 50 0 100 0 V 100 z' } //cover entire screen but bigger
       })
       .to(overlayPath, {
         duration: 0.3,
         ease: 'power2.in',
-        attr: { d: 'M 0 100 V 50 Q 50 100 100 50 V 100 z' }
+        attr: { d: 'M 0 100 V 50 Q 50 100 100 50 V 100 z' } // curve on top
       })
       .to(overlayPath, {
         duration: 0.8,
         ease: 'power4',
-        attr: { d: 'M 0 100 V 100 Q 50 100 100 100 V 100 z' }
+        attr: { d: 'M 0 100 V 100 Q 50 100 100 100 V 100 z' } //return to line
       })
       // title elements
       .to(
@@ -314,6 +314,42 @@ const openNav = () => {
   closeMenuCtrl.addEventListener('click', closeMenu)
 }
 
+function toggleDarkMode () {
+  const toggler = document.querySelector('.dark-mode-switch')
+  const darkModeCircle = document.querySelector('.dark-mode-circle')
+
+  function getDarkMode () {
+    return window.localStorage.getItem('dark-mode') === 'yes'
+  }
+  function setDarkMode (value) {
+    window.localStorage.setItem('dark-mode', value)
+  }
+  if (getDarkMode()) {
+    document.body.setAttribute('data-theme', 'dark')
+    darkModeCircle.classList.add('dark-mode-circle--dark')
+    darkModeCircle.classList.remove('dark-mode-circle--light')
+  }
+  function toggleClasses () {
+    if (darkModeCircle.classList.contains('dark-mode-circle--dark')) {
+      setDarkMode('no')
+      darkModeCircle.classList.remove('dark-mode-circle--dark')
+      darkModeCircle.classList.add('dark-mode-circle--light')
+      // delay to synchronise with dark mode animation
+      setTimeout(() => document.body.setAttribute('data-theme', 'light'), 600)
+    } else {
+      setDarkMode('yes')
+      darkModeCircle.classList.add(
+        'dark-mode-circle--dark',
+        'dark-mode-circle--dark-animate'
+      )
+      darkModeCircle.classList.remove('dark-mode-circle--light')
+      setTimeout(() => document.body.setAttribute('data-theme', 'dark'), 600)
+    }
+  }
+  toggler.addEventListener('click', toggleClasses)
+}
+
+toggleDarkMode()
 preloadImages([
   '.expanding-text-img-inner',
   '.grid__item-inner',
@@ -326,5 +362,5 @@ preloadImages([
   animateHobbies()
   stickyTools()
 
-  document.querySelector('.loading').classList.remove('loading')
+  // document.querySelector('.loading').classList.remove('loading')
 })

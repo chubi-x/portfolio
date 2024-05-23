@@ -1,6 +1,4 @@
 import { Flip } from 'gsap/Flip'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import gsap from 'gsap'
 class ExpandingAnimation {
   constructor (el) {
     if (!el || !(el instanceof HTMLElement)) {
@@ -63,7 +61,7 @@ export class ExpandImageEffect1 extends ExpandingAnimation {
 export class ExpandImageEffect2 extends ExpandingAnimation {
   initializeEffect () {
     this.wrapElement.classList.add('text--open')
-    const flipstate = Flip.getState([this.image])
+    const flipstate = Flip.getState(this.image)
     this.wrapElement.classList.remove('text--open')
 
     Flip.to(flipstate, {

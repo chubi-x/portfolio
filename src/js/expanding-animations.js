@@ -1,6 +1,5 @@
-import { Flip } from 'gsap/Flip'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import gsap from 'gsap'
+import { Flip } from 'gsap/Flip'
 class ExpandingAnimation {
   constructor (el) {
     if (!el || !(el instanceof HTMLElement)) {
@@ -63,27 +62,25 @@ export class ExpandImageEffect1 extends ExpandingAnimation {
 export class ExpandImageEffect2 extends ExpandingAnimation {
   initializeEffect () {
     this.wrapElement.classList.add('text--open')
-    const flipstate = Flip.getState([this.image])
+    const flipstate = Flip.getState(this.image)
     this.wrapElement.classList.remove('text--open')
 
-    Flip.to(flipstate, {
-      ease: 'sine',
-      simple: true,
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: this.wrapElement,
-        start: 'center bottom',
+        start: 'clamp(center bottom)',
         end: 'center top',
         scrub: true
       }
-    }).to(this.expandTexts, {
+    })
+
+    const flip = Flip.to(flipstate, {
       ease: 'sine',
-      skewX: -20,
-      scrollTrigger: {
-        trigger: this.wrapElement,
-        start: 'center bottom',
-        end: 'center top',
-        scrub: true
-      }
+      simple: true
+    })
+    tl.add(flip).to(this.expandTexts, {
+      ease: 'sine',
+      skewX: -20
     })
   }
 }
@@ -100,8 +97,8 @@ export class ExpandImageEffect3 extends ExpandingAnimation {
       x: 0,
       scrollTrigger: {
         trigger: this.wrapElement,
-        start: 'center bottom',
-        end: 'center top',
+        start: 'clamp(center bottom)',
+        end: 'clamp(center top)',
         scrub: true
       }
     }).fromTo(
@@ -112,7 +109,7 @@ export class ExpandImageEffect3 extends ExpandingAnimation {
       },
       {
         ease: 'sine.inOut',
-        yPercent: -40,
+        yPercent: -20,
         skewX: -2,
         lineHeight: 2,
         opacity: 0.2,

@@ -11,7 +11,7 @@ import {
   ExpandImageEffect1,
   ExpandImageEffect2,
   ExpandImageEffect3
-} from './about-me-animations.js'
+} from './expanding-animations.js'
 
 gsap.registerPlugin(ScrollTrigger, Flip)
 
@@ -132,7 +132,7 @@ function heroTextAnimation () {
   )
 }
 
-function stickyTools () {
+function stickyTestimonials () {
   const testimonials = document.querySelector('.testimonials')
   gsap
     .timeline({
@@ -162,7 +162,7 @@ function toggleVideo () {
     video.play()
   }
 }
-toggleVideo()
+// toggleVideo()
 
 function openNav () {
   // credit: https://tympanus.net/Development/Theodore/
@@ -359,8 +359,8 @@ preloadImages([
   expandAnims()
   initSmoothScrolling()
   heroTextAnimation()
-  animateHobbies()
-  stickyTools()
+  // animateHobbies()
+  stickyTestimonials()
 
   // document.querySelector('.loading').classList.remove('loading')
 })

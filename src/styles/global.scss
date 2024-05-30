@@ -36,6 +36,9 @@
   --link-color: white;
 
   --card-radius: 25px;
+
+  --body-padding: 20px;
+  --dark-mode-offset: 2em;
 }
 *,
 *::after,
@@ -47,8 +50,8 @@
   &-wrapper {
     position: fixed;
     z-index: 5;
-    bottom: 50px;
-    right: 50px;
+    bottom: var(--dark-mode-offset);
+    right: var(--dark-mode-offset);
   }
   &-switch {
     border-radius: 50%;
@@ -88,7 +91,8 @@
   h2,
   h3,
   p,
-  a {
+  a,
+  .block a {
     color: white;
   }
   header .logo,
@@ -136,6 +140,8 @@ body {
     content: '';
     position: fixed;
     z-index: -1;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
     background: url('/images/noise.png'), white;
@@ -228,6 +234,8 @@ a:hover::after {
 .navbar {
   position: fixed;
   height: 15vh;
+  top: 0;
+  left: 0;
   background-color: var(--bg-color);
   z-index: 3;
   width: 100%;
@@ -241,20 +249,20 @@ a:hover::after {
     padding: 0px 50px;
     align-items: center;
   }
-  div.cross-asset {
+  .cross-asset {
     width: 100px;
     img {
       width: 100%;
     }
   }
-  div.logo {
+  .logo {
     top: 15%;
     width: 150px;
     img {
       width: 100%;
     }
   }
-  ul.nav-links {
+  .nav-links {
     margin-right: 5%;
     width: 400px;
     display: flex;
@@ -377,11 +385,10 @@ a:hover::after {
 }
 
 .tiles__line-img {
-  --tile-margin: 3vw;
   flex: none;
   width: 30vh;
   height: 30vh;
-  margin: var(--tile-margin);
+  margin: 3vw;
   background-size: cover;
   background-position: 50% 50%;
   border-radius: 50%;
@@ -403,8 +410,7 @@ main {
 
 footer {
   height: 90vh;
-  width: 100%;
-
+  margin-bottom: calc(-1 * var(--dark-mode-offset));
   padding: 20px 5%;
   padding-top: 100px;
   background: url('/images/noise.png'),
@@ -420,6 +426,7 @@ footer {
     }
   }
   .cta {
+    max-width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -518,11 +525,15 @@ footer .nav-links {
 }
 .embla__container {
   display: flex;
+  // justify-content: space-between;
+  gap: 50px;
 }
 .embla__slide {
-  flex: 0 0 10%;
+  flex: 0 0 50px;
   min-width: 0;
-  padding-left: 90px;
+  &:is(:last-child) {
+    margin-right: 50px;
+  }
 }
 .overlay {
   position: absolute;
@@ -595,5 +606,90 @@ footer .nav-links {
   100% {
     opacity: 0;
     transform: scale(0);
+  }
+}
+@media screen and (max-width: 600px), (max-height: 500px) {
+  body {
+    padding: 0px var(--body-padding);
+  }
+  .navbar {
+    .logo {
+      width: 90px;
+    }
+    .cross-asset {
+      width: 40px;
+    }
+    .nav {
+      padding: 0px 10px;
+    }
+    .menu {
+      gap: 30px;
+    }
+    .menu-button {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  footer {
+    height: auto;
+    margin-left: calc(-1 * var(--body-padding));
+    margin-right: calc(-1 * var(--body-padding));
+
+    .logo {
+      img {
+        width: 120px;
+      }
+    }
+    .cta {
+      max-width: none;
+      gap: 20px;
+      h1 {
+        font-size: clamp(1.5rem, 0.5vw, 1rem);
+      }
+    }
+    .credits {
+      font-size: 12px;
+    }
+  }
+}
+@media screen and (max-height: 500px) {
+  .navbar {
+    height: 20vh;
+
+    .menu__item {
+      font-size: 5vw;
+    }
+  }
+}
+
+@media screen and (min-width: 340px) and (max-width: 767px) {
+  footer {
+    height: auto;
+    margin-right: calc(-1 * var(--body-padding));
+    margin-left: calc(-1 * var(--body-padding));
+
+    .footer-links {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .cta {
+      gap: 20px;
+      h1 {
+        font-size: clamp(1.5rem, 1vw, 3rem);
+      }
+    }
+
+    .links {
+      width: 100%;
+      justify-content: space-between;
+    }
+    .social-links {
+      .link img {
+        width: 25px;
+      }
+    }
+    .credits {
+      font-size: 12px;
+    }
   }
 }

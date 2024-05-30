@@ -1,8 +1,7 @@
 ---
-import '../styles/index.scss'
-
 import ProjectCard from '../components/ProjectCard.astro'
 import BaseLayout from '../layouts/BaseLayout.astro'
+import '../styles/index.scss'
 const projects = [
 	{
 		name: 'FiniteViz',
@@ -75,6 +74,13 @@ const testimonials = [
 			'Chubi is not only a genius problem-solver but also an exceptional collaborator. His willingness to listen, share ideas, and work seamlessly within a team environment is truly admirable. He elevates the whole team with his expertise and positive attitude, making every project a success.'
 	},
 	{
+		name: 'Ojima Aniegboka',
+		job: 'Senior Product Designer, GoCo.io',
+		link: 'https://www.linkedin.com/in/ojima-aniegboka/',
+		testimonial:
+			'Chubi is not only a genius problem-solver but also an exceptional collaborator. His willingness to listen, share ideas, and work seamlessly within a team environment is truly admirable. He elevates the whole team with his expertise and positive attitude, making every project a success.'
+	},
+	{
 		name: 'Professor Wulf Dettmer',
 		job: 'Professor of Aerospace Engineering, Swansea University',
 		link: 'https://www.linkedin.com/in/wulf-dettmer-bbab09a/',
@@ -129,8 +135,8 @@ const testimonials = [
 	<div class='content content--center'>
 		<h3 class='title'>Techne</h3>
 		<h2 class='text' data-expand-2>
-			Technical skill <br />
-			is mastery of complexity<br />
+			<span class='content--center-text'>Technical skill</span>
+			<span class='content--center-text'>is mastery of complexity</span>
 			<span class='expanding-text expanding-text--center'>
 				<span class='aright'>while </span>
 				<span class='expanding-text-img'>
@@ -140,8 +146,7 @@ const testimonials = [
 				</span>
 				<span class='anim'>creativity</span>
 			</span>
-			<br />
-			is mastery of simplicity.
+			<span class='content--center-text'>is mastery of simplicity.</span>
 		</h2>
 		<p class='block'>
 			<a
@@ -283,7 +288,7 @@ const testimonials = [
 	</div>
 
 	<section class='projects'>
-		<h1 class='projects-header'>Stuff I've Built</h1>
+		<h1 class='projects-header'>Things I've Built</h1>
 		<div class='projects-cards-wrapper'>
 			<div class='projects-cards'>
 				{projects.slice(0, 4).map((project) => <ProjectCard project={project} />)}
@@ -315,7 +320,7 @@ const testimonials = [
 		</div>
 	</section>
 
-	<section class='hobbies'>
+	<!-- <section class='hobbies'>
 		<div class='content content--right'>
 			<h3 class='title'>Hobbies</h3>
 			<h2 class='text' data-expand-3>
@@ -328,13 +333,12 @@ const testimonials = [
 							style='background-image: url(/images/8.jpeg);'></span>
 					</span>
 				</span>
-				I draw un-symmetric lines<br />
-				and take subpar pictures.
+				but I am trying to be.<br />
 			</h2>
 			<p class='block'>
 				When I was 15 I discovered I enjoyed snapping pics on my phone. At 18 I discovered
-				I enjoyed scribbling lines on paper. What you're about to see is my exploration of
-				how bad I am at both. Scroll at your own peril.
+				I enjoyed scribbling lines on paper. Since then I have strived to see how far I can
+				take them.
 			</p>
 		</div>
 		<div class='hobbies-grid hobbies-grid--4'>
@@ -524,8 +528,8 @@ const testimonials = [
 
 			<a href='#' class='btn btn-outline p-10'>see my work</a>
 		</div>
-	</section>
-	<section class='blog'>
+	</section> -->
+	<!-- <section class='blog'>
 		<div class='blog-cards-wrapper'>
 			<h1>I write about everything and nothing. Read my mind ramblings</h1>
 			<div class='blog-cards'>
@@ -577,14 +581,13 @@ const testimonials = [
 			</div>
 		</div>
 		<a href='#' class='btn btn-outline p-10'>read sum more</a>
-	</section>
+	</section> -->
 	<script>
 		import EmblaCarousel, { type EmblaOptionsType } from 'embla-carousel'
 		import AutoScroll from 'embla-carousel-auto-scroll'
 
-		const carousels = document.querySelectorAll('.embla')
 		const options: EmblaOptionsType = { loop: true, dragFree: true }
-		carousels.forEach((carousel, index) => {
+		document.querySelectorAll('.embla').forEach((carousel, index) => {
 			EmblaCarousel(carousel, options, [
 				AutoScroll({
 					playOnInit: true,

@@ -1,5 +1,4 @@
 .content {
-  padding: var(--page-padding);
   padding-top: 50vh;
   display: grid;
   gap: 2rem;
@@ -7,7 +6,11 @@
   grid-template-areas:
     'text'
     'block';
+
   grid-template-rows: auto 70vh auto;
+}
+.content--center-text {
+  display: block;
 }
 
 .title {
@@ -29,11 +32,15 @@
   vertical-align: top;
   display: inline-grid;
   grid-template-columns: min-content;
-}
 
-.expanding-text--center,
-.expanding-text--full {
-  display: block;
+  &--inline {
+    display: grid;
+  }
+
+  &--center,
+  &--full {
+    display: block;
+  }
 }
 
 .text--open .expanding-text {
@@ -64,7 +71,6 @@
 
 .anim {
   display: inline-block;
-  height: 100px;
   white-space: nowrap;
 }
 
@@ -80,67 +86,7 @@
     text-decoration: underline;
   }
 }
-@media screen and (min-width: 40em) {
-  .content-left {
-    grid-template-columns: auto auto;
-    grid-template-rows: auto 19vw auto;
-    grid-template-areas:
-      'text text'
-      '. block';
-  }
-  .content--center {
-    text-align: center;
-    place-items: center;
-    grid-template-areas:
-      'title'
-      'text'
-      'block';
-    grid-template-rows: auto 40vw auto;
-  }
-  .content--center .text {
-    align-self: start;
-    &::after {
-      content: '- Christopher Zeeman';
-      font-size: 20px;
-    }
-  }
-  .content--right {
-    grid-column-gap: 10vw;
-    grid-template-columns: auto 55%;
-    grid-template-areas: 'block title' 'block text';
-    grid-template-rows: auto 50vw;
-    text-align: right;
-    justify-content: end;
-  }
-  .content--right .block {
-    margin-top: 40vh;
-  }
 
-  .expanding-text--inline {
-    gap: 0.1em;
-    grid-template-columns: repeat(2, min-content);
-  }
-  .text--open .expanding-text-img {
-    max-width: 50vw;
-  }
-  .expanding-text--center {
-    display: inline-grid;
-    gap: 0.15em;
-    justify-content: center;
-    grid-template-columns: 1fr min-content 1fr;
-  }
-
-  .expanding-text--full {
-    width: 100%;
-    grid-template-columns: 100%;
-  }
-  .expanding-text--full .expanding-text-img {
-    margin-left: auto;
-  }
-  .aright {
-    text-align: right;
-  }
-}
 .tools {
   width: 100%;
   padding: 15vh 0;
@@ -174,7 +120,7 @@
   display: flex;
   flex-direction: column;
 
-  padding: 15vh 15%;
+  padding: 15vh 10%;
   &-header {
     font-size: clamp(1.25rem, 0.9756rem + 1.2195vw, 2.5rem);
     text-align: center;
@@ -215,10 +161,10 @@
     }
   }
   &-cards {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
-    row-gap: 40px;
+    gap: 40px;
     padding-top: 50px;
     &-wrapper {
       display: flex;
@@ -232,7 +178,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      width: 48%;
+      // width: 48%;
       height: 450px;
       border-radius: var(--card-radius);
       border: 2px solid var(--green);
@@ -287,7 +233,7 @@
     font-size: 20px;
   }
 }
-section.testimonials {
+.testimonials {
   position: sticky;
   top: 200px;
   --offset: 100px;
@@ -318,26 +264,19 @@ section.testimonials {
     }
     &-card {
       flex-basis: 30%;
+
       padding: 20px 40px;
 
       border-radius: var(--card-radius);
-      &:hover {
-        background-color: var(--green);
-        .name a {
-          color: var(--blue);
-        }
-        .job {
-          color: var(--blue);
-        }
-      }
 
       p {
         font-weight: 500;
         &::before {
           content: '';
           display: block;
-          background-image: url('/icons/quote.svg');
-          background-repeat: no-repeat;
+          mask-image: url('/icons/quote.svg');
+          background-color: var(--green);
+          mask-repeat: no-repeat;
           width: 60px;
           height: 60px;
         }
@@ -354,10 +293,24 @@ section.testimonials {
       .job {
         font-size: 14px;
       }
+
+      &:hover {
+        background-color: var(--green);
+
+        p::before {
+          background-color: var(--blue);
+        }
+        .name a {
+          color: var(--blue);
+        }
+        .job {
+          color: var(--blue);
+        }
+      }
     }
   }
 }
-section.hobbies {
+.hobbies {
   --perspective: 1500px;
   --grid-item-ratio: 1;
   --grid-width: 100%;
@@ -434,61 +387,171 @@ section.hobbies {
   }
 }
 
-section.blog {
+.blog {
   height: 99vh;
   display: flex;
   margin-bottom: 12vh;
   flex-direction: column;
   align-items: center;
-  .blog {
-    &-cards-wrapper {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      h1 {
-        font-size: clamp(1.5rem, 2vw, 6.5rem);
-        text-align: center;
-        margin-bottom: 100px;
+  &-cards-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    h1 {
+      font-size: clamp(1.5rem, 2vw, 6.5rem);
+      text-align: center;
+      margin-bottom: 100px;
+    }
+  }
+  &-cards {
+    display: grid;
+    gap: 2%;
+    flex-grow: 1;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+  }
+  &-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-grow: 1;
+    border: 2px solid var(--green);
+    border-radius: var(--card-radius);
+    height: auto;
+    max-height: 700px;
+
+    &-description {
+      background: rgba(84, 84, 84, 0.3);
+      backdrop-filter: blur(10px);
+
+      padding: 20px;
+      color: white;
+      border-radius: 0px 0px var(--card-radius) var(--card-radius);
+      h3 {
+        margin: 0px;
+        font-weight: 500;
+      }
+      p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+      a {
+        font-size: 14px;
+        font-weight: 500;
       }
     }
+  }
+}
+@media screen and (min-width: 40em) {
+  .content-left {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto 19vw auto;
+    grid-template-areas:
+      'text text'
+      '. block';
+  }
+  .content--center {
+    text-align: center;
+    place-items: center;
+    grid-template-areas:
+      'title'
+      'text'
+      'block';
+    grid-template-rows: auto 40vw auto;
+  }
+  .content--center-text:is(:last-child) {
+    align-self: start;
+    &::after {
+      content: '- Christopher Zeeman';
+      font-size: 20px;
+    }
+  }
+  .content--right {
+    grid-column-gap: 10vw;
+    grid-template-columns: auto 55%;
+    grid-template-areas: 'block title' 'block text';
+    grid-template-rows: auto 50vw;
+    text-align: right;
+    justify-content: end;
+  }
+  .content--right .block {
+    margin-top: 40vh;
+  }
+
+  .expanding-text--inline {
+    gap: 0.1em;
+    display: inline-grid;
+    grid-template-columns: repeat(2, min-content);
+  }
+  .text--open .expanding-text-img {
+    max-width: 50vw;
+  }
+  .expanding-text--center {
+    display: inline-grid;
+    gap: 0.15em;
+    justify-content: center;
+    grid-template-columns: 1fr min-content 1fr;
+  }
+
+  .expanding-text--full {
+    width: 100%;
+    grid-template-columns: 100%;
+  }
+  .expanding-text--full .expanding-text-img {
+    margin-left: auto;
+  }
+  .aright {
+    text-align: right;
+  }
+  .anim {
+    height: 100px;
+  }
+
+  .embla__container {
+    gap: 100px;
+  }
+}
+@media only screen and (min-width: 340px) and (max-width: 767px) and (min-height: 500px) {
+  .content {
+    padding-top: 60vh;
+  }
+  .projects {
+    padding: 15vh 0;
     &-cards {
-      display: flex;
-      gap: 2%;
-      flex-grow: 1;
-      justify-content: center;
-      width: 100%;
+      grid-template-columns: 1fr;
     }
-    &-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      background-size: cover;
-      background-repeat: no-repeat;
-      flex-grow: 1;
-      border: 2px solid var(--green);
-      border-radius: var(--card-radius);
+  }
 
-      &-description {
-        background: rgba(84, 84, 84, 0.3);
-        backdrop-filter: blur(10px);
+  .testimonials {
+    margin: 0px calc(-1 * var(--body-padding));
+    h1 {
+      margin: 50px 20px;
+      font-size: clamp(1.5rem, 1vw, 3rem);
+      text-align: center;
+    }
 
-        padding: 20px;
-        color: white;
-        border-radius: 0px 0px var(--card-radius) var(--card-radius);
-        h3 {
-          margin: 0px;
-          font-weight: 500;
-        }
-        p {
-          font-weight: 400;
-          font-size: 16px;
-          line-height: 1.6;
-        }
-        a {
-          font-size: 14px;
-          font-weight: 500;
-        }
+    .testimonial {
+      &-cards-wrapper {
+        // width: 100%;
       }
+      &-card {
+        max-width: 300px;
+      }
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+  .blog {
+    &-cards {
+      grid-template-columns: 1fr;
+    }
+
+    &-card {
     }
   }
 }

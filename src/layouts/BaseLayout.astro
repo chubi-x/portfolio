@@ -7,9 +7,12 @@ const { title } = Astro.props
 ---
 
 <html lang='en'>
-	<div id='nojs' style='width:100vw;height:100vh;position:fixed;top: 0; background-color:white;'>
+	<div
+		id='nojs'
+		style='width:100vw; height:100vh;position:fixed;top: 0; background-color:white;'
+	>
 		<h1>Please Enable Javascript to continue</h1>
-		<small>pretty please with sprinkles on top :(</small>
+		<small>pretty please with sprinkles on top :( </small>
 	</div>
 	<script>
 		window.onload = function () {
@@ -25,7 +28,6 @@ const { title } = Astro.props
 		<title>{title}</title>
 	</head>
 	<body>
-		<!-- <div class='loading'></div> -->
 		<Navbar />
 		<main>
 			<slot />

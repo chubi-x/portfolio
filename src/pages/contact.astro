@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 import '../styles/contact.scss'
 
 const waves = []
-for (let i = 20; i <= 100; i += 5) waves.push(i)
+for (let i = 100; i >= 20; i -= 5) waves.push(i)
 ---
 
 <BaseLayout title='Contact Me'>
@@ -47,8 +47,8 @@ for (let i = 20; i <= 100; i += 5) waves.push(i)
 			</form>
 		</div>
 		<div class='image-wrapper'>
-			<section class='w-full grid place-items-center'>
-				{waves.map((num) => <div class={`wave w-[${num}%] h-[${num}%]`} />)}
+			<section class='w-full h-full grid place-items-center'>
+				{waves.map((num) => <div style={`width:${num}%;height: ${num}%`} class='wave' />)}
 			</section>
 		</div>
 	</section>

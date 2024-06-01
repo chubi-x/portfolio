@@ -1,0 +1,46 @@
+body {
+  overflow: revert;
+}
+main {
+  @apply mb-24;
+}
+
+.contact-section {
+  @apply relative flex flex-wrap lg:h-screen lg:items-center;
+}
+.form-wrapper {
+  @apply w-full relative z-[2] md:px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24;
+  .heading-wrapper {
+    @apply mx-auto max-w-lg text-center;
+    h1 {
+      @apply text-2xl font-bold sm:text-3xl;
+    }
+    p {
+      @apply mt-4;
+    }
+  }
+}
+form {
+  @apply mx-auto mb-0 mt-8 max-w-md space-y-4;
+}
+label {
+  @apply sr-only;
+}
+input,
+textarea {
+  @apply w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm;
+}
+
+.image-wrapper {
+  @apply absolute z-[1] opacity-30 flex justify-center items-center h-full w-full;
+  transform: rotateX(50deg);
+  img {
+    @apply absolute inset-0 h-full w-full object-cover;
+  }
+}
+.button-wrapper {
+  @apply flex items-center justify-end;
+}
+.wave {
+  @apply absolute rounded-full border border-[color:var(--grey)];
+}

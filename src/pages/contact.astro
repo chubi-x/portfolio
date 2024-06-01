@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import '../styles/contact.scss'
+
+const waves = []
+for (let i = 20; i <= 100; i += 5) waves.push(i)
+---
+
+<BaseLayout title='Contact Me'>
+	<section class='contact-section'>
+		<div class='form-wrapper'>
+			<div class='heading-wrapper'>
+				<h1>Get in touch!</h1>
+
+				<p>
+					Do you have a project in mind that needs committment, attention to detail, and
+					lots of love, or do you just have questions? Whatever it is, fill the form
+					below and I'll get back to you as soon as I can!
+				</p>
+			</div>
+
+			<form action='#'>
+				<div>
+					<label for='name'>Name</label>
+					<div>
+						<input type='text' id='name' placeholder=' Name' />
+
+						<span class='icon'> </span>
+					</div>
+				</div>
+				<div>
+					<label for='email'>Email</label>
+					<div>
+						<input type='email' id='email' placeholder=' Email' />
+					</div>
+				</div>
+				<div>
+					<label for='message'>Message</label>
+					<div>
+						<textarea id='message' placeholder='Your message'></textarea>
+					</div>
+				</div>
+
+				<div class='button-wrapper'>
+					<button class='btn btn-primary' type='submit'> Submit </button>
+				</div>
+			</form>
+		</div>
+		<div class='image-wrapper'>
+			<section class='w-full grid place-items-center'>
+				{waves.map((num) => <div class={`wave w-[${num}%] h-[${num}%]`} />)}
+			</section>
+		</div>
+	</section>
+	<script>
+		import gsap from 'gsap'
+		gsap.to('.wave', {
+			y: 40,
+			borderColor: getComputedStyle(document.body).getPropertyValue('--green'),
+			ease: 'sine.inOut',
+			stagger: { each: 0.1, from: 'end', repeat: -1, yoyo: true }
+		})
+	</script>
+</BaseLayout>

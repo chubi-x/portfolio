@@ -1,5 +1,7 @@
 .content {
   padding-top: 50vh;
+  max-width: 100%;
+  overflow: hidden;
   display: grid;
   gap: 2rem;
   grid-template-columns: 100%;
@@ -8,9 +10,17 @@
     'block';
 
   grid-template-rows: auto 70vh auto;
-}
-.content--center-text {
-  display: block;
+
+  &--center {
+    grid-template-areas:
+      'title'
+      'text'
+      'block';
+  }
+
+  &--center-text {
+    display: block;
+  }
 }
 
 .title {

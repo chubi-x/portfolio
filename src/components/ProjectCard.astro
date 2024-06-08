@@ -1,8 +1,9 @@
 ---
 const { name, description, thumbnail, link, tools } = Astro.props.project
+const id = Astro.props.id
 ---
 
-<a class='card' href=`${link}` style=`background-image: url("${thumbnail}");`>
+<a class='card' href=`projects/${id}` style=`background-image: url("${thumbnail}");`>
 	<div class='card-description'>
 		<h3>{name}</h3>
 		<p>

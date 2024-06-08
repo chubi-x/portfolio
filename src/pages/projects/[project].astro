@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import '../../styles/project.scss'
+import { projects } from '../index.astro'
+
+const { project: id } = Astro.params
+const project = projects().get(parseInt(id))
+---
+
+<BaseLayout title={project ? project.name : 'Project not Found'}>
+	<section class='project-page'>
+		<h1 class='projects-header'>{project.name}</h1>
+		<img src={`${project.thumbnail}`} alt='' />
+		<p>{project.description}</p>
+		<p>{project.longDescription}</p>
+	</section>
+</BaseLayout>

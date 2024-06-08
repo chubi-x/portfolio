@@ -1,0 +1,23 @@
+---
+import ProjectCard from '../../components/ProjectCard.astro'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { projects } from '../index.astro'
+---
+
+<BaseLayout title='Projects'>
+	<section class='projects'>
+		<h1 class='projects-header'>Projects</h1>
+		<div class='projects-cards-wrapper'>
+			<div class='projects-cards'>
+				{
+					[...projects().entries()].map((projectKeyValuePair) => (
+						<ProjectCard
+							id={projectKeyValuePair[0]}
+							project={projectKeyValuePair[1]}
+						/>
+					))
+				}
+			</div>
+		</div>
+	</section>
+</BaseLayout>

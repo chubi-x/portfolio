@@ -1,5 +1,5 @@
 ---
-
+import { navLinks } from '../js/data'
 ---
 
 <header class='navbar'>
@@ -131,11 +131,13 @@
 				</div>
 			</div>
 			<nav class='menu'>
-				<a class='menu__item' href='/projects'> projects </a>
-				<a class='menu__item' href='/resume'> resume </a>
-				<a class='menu__item' href='/art'> art </a>
-				<a class='menu__item' href='/blog'> blog </a>
-				<a class='menu__item' href='/contact'> contact </a>
+				{
+					navLinks.map((navLink) => (
+						<a class='menu__item' href={`${navLink.link}`}>
+							{navLink.name}
+						</a>
+					))
+				}
 			</nav>
 			<button class='menu-button button-close'>
 				<svg width='19' height='12' viewBox='0 0 19 12'>

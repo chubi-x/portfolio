@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
-import '../../styles/project.scss'
-import { projects } from '../index.astro'
+import { projects } from '../../js/data'
+import '../../styles/projects.scss'
 
 const { project: id } = Astro.params
 const project = projects().get(parseInt(id))

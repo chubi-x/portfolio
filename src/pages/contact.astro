@@ -1,18 +1,44 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 import '../styles/contact.scss'
-
+import { mailTransporter } from '../js/email'
 const waves = []
 for (let i = 100; i >= 20; i -= 5) waves.push(i)
 
 //handle form
+let hasPosted = false
+const emailResponse = {
+	error: false,
+	header: 'Your message has been sent!',
+	message: 'I will try to reply as soon as possible!'
+}
 if (Astro.request.method === 'POST') {
+	hasPosted = true
 	try {
 		const data = await Astro.request.formData()
 		const name = data.get('name')
 		const email = data.get('email')
 		const message = data.get('message')
-		// do something with contact data
+
+		//check if the message has been sent before to prevent spam
+		//show message if mail wasn't sent.
+
+		const mailOptions = {
+			from: import.meta.env.MAILER,
+			to: import.meta.env.MAIL_RECEIVER,
+			subject: `You have a new message from your Portfolio Site!`,
+			text: `Message from ${name}, ${email}. \n\n ${message}`
+		}
+		mailTransporter.sendMail(mailOptions, (err, info) => {
+			if (err) {
+				emailResponse.error = true
+				emailResponse.header =
+					'There was an error sending your message across. Please try again!'
+				emailResponse.message =
+					'If the problem persists please send me an email directly at chubixax@protonmail.com'
+				//TODO log email error
+			}
+		})
 	} catch (err) {
 		if (err instanceof Error) {
 			console.error(err.message)
@@ -23,57 +49,74 @@ if (Astro.request.method === 'POST') {
 
 <BaseLayout title='Contact Me'>
 	<section class='contact-section'>
-		<div class='form-wrapper'>
-			<div class='heading-wrapper'>
-				<h1>Get in touch!</h1>
+		{
+			!hasPosted ? (
+				<div class='form-wrapper'>
+					<div class='heading-wrapper'>
+						<h1>Get in touch!</h1>
 
-				<p>
-					Do you have a project in mind that needs committment, attention to detail, and
-					lots of love, or do you just have questions? Whatever it is, fill the form
-					below and I'll get back to you as soon as I can!
-				</p>
-			</div>
-
-			<form method='post'>
-				<div>
-					<label for='name'>Name</label>
-					<div>
-						<input type='text' name='name' required placeholder=' Name' />
-
-						<span class='icon'> </span>
+						<p>
+							Do you have a project in mind that needs committment, attention to
+							detail, and lots of love, or do you just have questions? Whatever it
+							is, fill the form below and I'll get back to you as soon as I can!
+						</p>
 					</div>
-				</div>
-				<div>
-					<label for='email'>Email</label>
-					<div>
-						<input
-							type='email'
-							name='email'
-							required
-							id='email'
-							placeholder=' Email'
-						/>
-					</div>
-				</div>
-				<div>
-					<label for='message'>Message</label>
-					<div>
-						<textarea id='message' name='message' required placeholder='Your message'
-						></textarea>
-					</div>
-				</div>
 
-				<div class='button-wrapper'>
-					<button class='btn btn-primary' type='submit'> Submit </button>
+					<form method='post'>
+						<div>
+							<label for='name'>Name</label>
+							<div>
+								<input type='text' name='name' required placeholder=' Name' />
+
+								<span class='icon'> </span>
+							</div>
+						</div>
+						<div>
+							<label for='email'>Email</label>
+							<div>
+								<input
+									type='email'
+									name='email'
+									required
+									id='email'
+									placeholder=' Email'
+								/>
+							</div>
+						</div>
+						<div>
+							<label for='message'>Message</label>
+							<div>
+								<textarea
+									id='message'
+									name='message'
+									required
+									placeholder='Your message'
+								/>
+							</div>
+						</div>
+
+						<div class='button-wrapper'>
+							<button class='btn btn-primary' type='submit'>
+								{' '}
+								Submit{' '}
+							</button>
+						</div>
+					</form>
 				</div>
-			</form>
-		</div>
+			) : (
+				<div class='contact-response'>
+					<h1> {emailResponse.header}</h1>
+					<p>{emailResponse.message}</p>
+				</div>
+			)
+		}
 		<div class='image-wrapper'>
 			<section class='w-full h-full grid place-items-center'>
 				{waves.map((num) => <div style={`width:${num}%;height: ${num}%`} class='wave' />)}
 			</section>
 		</div>
 	</section>
+
 	<script>
 		import gsap from 'gsap'
 		gsap.to('.wave', {

@@ -1,5 +1,6 @@
 ---
 import '../styles/global.scss'
+import { SEO } from 'astro-seo'
 
 import Footer from '../components/Footer.astro'
 import Navbar from '../components/Navbar.astro'
@@ -11,7 +12,21 @@ const { title } = Astro.props
 		<meta charset='utf-8' />
 		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
 		<meta name='viewport' content='width=device-width' />
-		<title>{title}</title>
+		<SEO
+			title={title}
+			description=`Hi I'm Chubiyojo and welcome to my Software Developer Portfolio.
+			 Explore my diverse projects showcasing my Full-Stack web development expertise in JavaScript, Python, React, and Node.js. 
+			 I deliver custom software solution and responsive websites with a focus on performance, scalability, and user experience. 
+			 Browse my portfolio to see top-quality work and connect with me for your next project in software engineering, frontend development, or backend development.`
+			`
+			openGraph={{
+				basic: {
+					title: title,
+					type: 'website',
+					image: 'https://raw.githubusercontent.com/chubi-x/portfolio/47edaf257faa662c2754925abd20dee04bdea961/public/images/headshot.png'
+				}
+			}}
+		/>
 	</head>
 
 	<body>

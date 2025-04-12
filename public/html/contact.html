@@ -1,0 +1,14 @@
+<form
+  name="contact"
+  method="post"
+  netlify
+  hidden
+  netlify-honeypot="bot-field"
+  action="/contact"
+>
+  <input name="bot-field" hidden />
+  <input type="text" name="name" required placeholder=" Name" />
+  <input type="email" name="email" required id="email" placeholder=" Email" />
+  <textarea id="message" name="message" required placeholder="Your message" />
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>

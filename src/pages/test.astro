@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+  
+          <form name='contact' method='post' netlify, netlify-honeypot="bot-field">
+            <p class="hidden">
+                  <label>
+                    Don’t fill this out if you’re human: <input name="bot-field" />
+                  </label>
+            </p>
+                <input type='hidden' name='form-name' value='contact' />
+						<div>
+							<label for='name'>Name</label>
+							<div>
+								<input type='text' name='name' required placeholder=' Name' />
+
+								<span class='icon'> </span>
+							</div>
+						</div>
+						<div>
+							<label for='email'>Email</label>
+							<div>
+								<input
+									type='email'
+									name='email'
+									required
+									id='email'
+									placeholder=' Email'
+								/>
+							</div>
+						</div>
+						<div>
+							<label for='message'>Message</label>
+							<div>
+								<textarea
+									id='message'
+									name='message'
+									required
+									placeholder='Your message'
+								/>
+							</div>
+						</div>
+
+						<div class='button-wrapper'>
+							<button class='btn btn-primary' type='submit'>
+								Submit
+							</button>
+						</div>
+					</form>
+

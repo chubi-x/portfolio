@@ -196,6 +196,10 @@ h5 {
   font-weight: normal;
 }
 
+h1 {
+  font-size: clamp(2rem, 2.5vw, 5rem);
+  text-align: center;
+}
 a::before,
 a::after {
   position: absolute;

@@ -6,16 +6,16 @@
   gap: 2rem;
   grid-template-columns: 100%;
   grid-template-areas:
-    'text'
-    'block';
+    "text"
+    "block";
 
   grid-template-rows: auto 70vh auto;
 
   &--center {
     grid-template-areas:
-      'title'
-      'text'
-      'block';
+      "title"
+      "text"
+      "block";
   }
 
   &--center-text {
@@ -76,7 +76,7 @@
 }
 
 .text--open .expanding-text-img {
-  width:300px;
+  width: 300px;
 }
 
 .anim {
@@ -103,10 +103,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  h1 {
-    font-size: clamp(2rem, 2.5vw, 5rem);
-    text-align: center;
-  }
 
   > div {
     width: 90%;
@@ -133,9 +129,11 @@
   top: var(--offset);
   height: calc(100vh - var(--offset));
   color: white;
-  background: url('/images/noise.png');
+  background: url("/images/noise.png");
   background-color: var(--blue);
-  background-size: 150px, 100% 100vh;
+  background-size:
+    150px,
+    100% 100vh;
   background-attachment: fixed;
   height: auto;
   display: flex;
@@ -165,9 +163,9 @@
       p {
         font-weight: 500;
         &::before {
-          content: '';
+          content: "";
           display: block;
-          mask-image: url('/icons/quote.svg');
+          mask-image: url("/icons/quote.svg");
           background-color: var(--green);
           mask-repeat: no-repeat;
           width: 60px;
@@ -344,29 +342,29 @@
     grid-template-columns: auto auto;
     grid-template-rows: auto 19vw auto;
     grid-template-areas:
-      'text text'
-      '. block';
+      "text text"
+      ". block";
   }
   .content--center {
     text-align: center;
     place-items: center;
     grid-template-areas:
-      'title'
-      'text'
-      'block';
+      "title"
+      "text"
+      "block";
     grid-template-rows: auto 40vw auto;
   }
   .content--center-text:is(:last-child) {
     align-self: start;
     &::after {
-      content: '- Christopher Zeeman';
+      content: "- Christopher Zeeman";
       font-size: 20px;
     }
   }
   .content--right {
     grid-column-gap: 10vw;
     grid-template-columns: auto 55%;
-    grid-template-areas: 'block title' 'block text';
+    grid-template-areas: "block title" "block text";
     grid-template-rows: auto 50vw;
     text-align: right;
     justify-content: end;

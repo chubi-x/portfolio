@@ -15,10 +15,10 @@
 # to="/.netlify/images?url=images/projects/:file&fm=webp&q=60"
 # force = true
 
-[[plugins]]
-package = "netlify-plugin-cloudinary"
-
-    [plugins.inputs]
-    cloudName = "chubi-x"
-    # imagesPath = ["/images/photography", "/images/projects"]
-    imagesPath = ["/images"]
+# [[plugins]]
+# package = "netlify-plugin-cloudinary"
+#
+#     [plugins.inputs]
+#     cloudName = "chubi-x"
+#     # imagesPath = ["/images/photography", "/images/projects"]
+#     imagesPath = ["/images"]

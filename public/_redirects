@@ -1,2 +1,2 @@
-/images/photography/:file         /.netlify/images?url=images/photography/:file&fm=webp&q=60
-/images/projects/:file         /.netlify/images?url=images/projects/:file&fm=webp&q=60
+/images/photography/:file         /.netlify/images?url=/images/photography/:file&fm=webp&q=60
+/images/projects/:file         /.netlify/images?url=/images/projects/:file&fm=webp&q=60

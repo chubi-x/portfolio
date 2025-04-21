@@ -1,0 +1,13 @@
+[[redirects]]
+
+from = "/images/full/:file"
+to = "/.netlify/images?url=images/:file"
+
+[[redirects]]
+from = "/images/photography/:file"
+to="/.netlify/images?url=images/photography/:file"
+
+
+[[redirects]]
+from = "/images/projects/:file"
+to="/.netlify/images?url=images/projects/:file"

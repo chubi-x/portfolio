@@ -1,2 +1,0 @@
-/images/*.svg /images/:splat 200!
-/icons/*.svg /icons/:splat 200!

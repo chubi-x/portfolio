@@ -1,14 +1,13 @@
 [[redirects]]
 
 from = "/images/full/:file"
-to = "/.netlify/images?url=images/:file&fm=webp&w=800"
-
+to = "/.netlify/images?url=images/:file&fm=webp&q=60"
 
 [[redirects]]
 from = "/images/photography/:file"
-to="/.netlify/images?url=images/photography/:file&fm=webp&w=800"
+to="/.netlify/images?url=images/photography/:file&fm=webp&q=60"
 
 
 [[redirects]]
 from = "/images/projects/:file"
-to="/.netlify/images?url=images/projects/:file&fm=webp&w=800"
+to="/.netlify/images?url=images/projects/:file&fm=webp&q=60"

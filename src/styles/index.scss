@@ -165,7 +165,7 @@
         &::before {
           content: "";
           display: block;
-          mask-image: url("/icons/quote.svg");
+          mask-image: url("/svgs/quote.svg");
           background-color: var(--green);
           mask-repeat: no-repeat;
           width: 60px;

@@ -2,12 +2,15 @@
 
 from = "/images/full/:file"
 to = "/.netlify/images?url=images/:file&fm=webp&q=60"
+force = true
 
-[[redirects]]
+[[redirects]
 from = "/images/photography/:file"
 to="/.netlify/images?url=images/photography/:file&fm=webp&q=60"
+force = true
 
 
 [[redirects]]
 from = "/images/projects/:file"
 to="/.netlify/images?url=images/projects/:file&fm=webp&q=60"
+force = true

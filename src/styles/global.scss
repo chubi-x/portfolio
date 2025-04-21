@@ -537,10 +537,20 @@ footer .nav-links {
   gap: 50px;
 }
 .embla__slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   flex: 0 0 50px;
   min-width: 0;
   &:is(:last-child) {
     margin-right: 50px;
+  }
+  > div {
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 100%;
   }
 }
 .overlay {

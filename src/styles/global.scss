@@ -115,7 +115,7 @@
     fill: var(--green);
   }
   .dark-mode-switch {
-    background-image: url("/icons/sun.svg");
+    background-image: url("/svgs/sun.svg");
     background-size: 40px;
     &:hover {
       animation: rotate 1s ease;

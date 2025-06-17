@@ -112,6 +112,9 @@ export const testimonials = [
 
 export const navLinks = [
   { name: "projects", link: "/projects" },
-  { name: "resume", link: "/resume" },
+  {
+    name: "resume",
+    link: "https://docs.google.com/document/d/1ZbwJEVmN7KPrIflB-bRXPVuV3U68sLC1DVO47P0KhZw/edit?usp=sharing",
+  },
   { name: "contact", link: "/contact" },
 ];

@@ -1,0 +1,9 @@
+---
+import BaseLayout from "./BaseLayout.astro"
+import '../styles/blog.scss'
+const {frontmatter} = Astro.props
+---
+<BaseLayout title={frontmatter?.title}>
+  <section class="blog">
+      <slot />
+  </section>

@@ -55,59 +55,6 @@
       align-items: center;
     }
 
-    .card {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      // width: 48%;
-      height: 450px;
-      border-radius: var(--card-radius);
-      border: 2px solid var(--green);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-
-      &-image {
-        height: 100%;
-        width: 100%;
-      }
-      img {
-        width: 100%;
-        height: 100%;
-      }
-      p {
-        max-width: 100%;
-        text-wrap: wrap;
-        font-size: 14px;
-        font-weight: 500;
-      }
-      &-description {
-        background: rgba(84, 84, 84, 0.3);
-        backdrop-filter: blur(7px);
-        padding: 10px 20px;
-        color: white;
-        border-radius: 0px 0px var(--card-radius) var(--card-radius);
-
-        h2 {
-          font-weight: 500;
-          margin: 0px;
-        }
-      }
-
-      &-technologies {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 5px;
-        &-pill {
-          font-size: 12px;
-          font-weight: 500;
-          display: inline-block;
-          background-color: black;
-          padding: 5px 10px;
-          border-radius: 50px;
-        }
-      }
-    }
   }
   .btn-primary {
     margin-top: 100px;

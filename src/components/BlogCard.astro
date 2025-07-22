@@ -1,0 +1,18 @@
+
+---
+const {data} = Astro.props.blog
+const {image,title,slug,tags} = data
+// const { frontmatter,url:link} = Astro.props.blog
+// const { title,  image:thumbnail } = frontmatter
+---
+
+<div class='blog-card'  style=`background-image: url("${image.url}");`>
+	<div class='blog-card-description'>
+		<h2>{title}</h2>
+		<div class='card-pills'>
+			{tags?.map((tag) => <span class='card-pill'>{tag}</span>)}
+		</div>
+	</div>
+  <a href=`/blog/${slug}`>
+						</a>
+</div>

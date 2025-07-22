@@ -1,0 +1,22 @@
+[data-theme="dark"] {
+  main {
+    color: white;
+  }
+}
+
+code:not(pre *) {
+  background-color: var(--green);
+  color: var(--blue);
+  &::before, &::after {
+    content: "";
+  }
+}
+
+.blog {
+  display: flex;
+  margin: 15% 0px;
+  justify-content: center;
+}
+.prose{
+  max-width: 80ch;
+}

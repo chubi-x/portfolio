@@ -1,0 +1,24 @@
+
+
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import '../../styles/index.scss'
+import BlogCard from '../../components/BlogCard.astro'
+import { getCollection } from 'astro:content'
+
+// const posts = Object.values(import.meta.glob("./posts/*.md", { eager: true  }))
+const posts = await getCollection("blog") 
+---
+
+<BaseLayout title='Chubi - Software Engineer'>
+  <section class="blog">
+
+    <h1>Blog</h1>
+    <div class="blog-cards">
+    {posts.map((blog) => (
+    <BlogCard blog={blog} />
+    ))}
+    </div>
+
+  </section>
+</BaseLayout>

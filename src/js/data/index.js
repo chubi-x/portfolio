@@ -89,7 +89,7 @@ export const testimonials = [
   },
   {
     name: "Joshua Harrigan",
-    job: "Data Governance Officer at Swansea University",
+    job: "Data Executive, Admiral",
     link: "https://www.linkedin.com/in/joshua-harrigan-7b1b5a149/",
     testimonial:
       "It’s been a pleasure working with such amazing talent in our student communities. You’re a fantastic person, and an incredibly skilled practitioner!",

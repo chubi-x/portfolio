@@ -43,3 +43,51 @@ code:not(pre *) {
 [data-theme="dark"] .prose a:hover, [data-theme="dark"] .prose a:focus {
   color: var(--green);
 }
+
+/* Mobile responsive adjustments for blog pages */
+@media only screen and (max-width: 850px) {
+  .blog {
+    margin: 8% 0 4% 0;
+    padding: 0 16px;
+    display: block;
+  }
+
+  .blog .blog-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .blog-card {
+    background-size: cover;
+    background-position: center;
+    min-height: 220px;
+    border-radius: var(--card-radius);
+    border: 2px solid var(--green);
+    overflow: hidden;
+  }
+
+  .blog-card-description {
+    padding: 12px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 100%);
+  }
+
+  .prose {
+    max-width: 100%;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+
+  .prose img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  code:not(pre *) {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+}

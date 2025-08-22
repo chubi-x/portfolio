@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
-@import 'tailwindcss';
-@plugin 'tailwindcss/typography';
+@reference "./global.css";
 @font-face {
   font-family: "NeueMontreal";
   src: url("/fonts/NeueMontreal-Regular.otf") format("opentype");
@@ -27,22 +26,6 @@
   src: url("/fonts/NeueMontreal-Medium.otf") format("opentype");
   font-weight: 500;
   font-style: normal;
-}
-:root {
-  --grey: #f2f2f2;
-  --dark-grey: #667085;
-  --green: #cfd21c;
-  --blue: #0b52a1;
-  --dark-blue: #002f86;
-  --bg-color: white;
-  --link-color: white;
-
-  --card-radius: 25px;
-
-  --body-padding: 20px;
-  --dark-mode-offset: 2em;
-  --shadow: 10px 10px 20px -7px rgba(0, 0, 0, 0.75);
-  --nav-height: 15vh;
 }
 *,
 *::after,

@@ -1,3 +1,26 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@theme{
+  --color-grey: #f2f2f2;
+  --color-dark-grey: #667085;
+  --color-green: #cfd21c;
+  --color-blue: #0b52a1;
+  --color-dark-blue: #002f86;
+}
+:root {
+  --grey: #f2f2f2;
+  --dark-grey: #667085;
+  --green: #cfd21c;
+  --blue: #0b52a1;
+  --dark-blue: #002f86;
+  --bg-color: white;
+  --link-color: white;
+
+  --card-radius: 25px;
+
+  --body-padding: 20px;
+  --dark-mode-offset: 2em;
+  --shadow: 10px 10px 20px -7px rgba(0, 0, 0, 0.75);
+  --nav-height: 15vh;
+}

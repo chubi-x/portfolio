@@ -13,11 +13,24 @@ slug: "simple-arch-linux-installation"
 ---
 
 # Simple Arch Linux Installation or "I (now) use Arch btw"
-I have decided to have arch as my daily driver/
-- what is the motivation?
-	- being the sysadmin for my own machine.
+## Motivation
+I've wanted to use Linux as my daily driver ever since I got my current job. All dev machines at work run on 
+linux (Ubuntu or Arch,whatever you want. We get full reign!) and it's been such a pleasant experience that I've decided to run linux on my personal machine. There was some apprehension at first, with how familiar I'd become with MacOS, but let's be honest, Mac is just linux with extra ricing. 
 
-## process
+After little deliberation I decided to bite the bullet, and psycopath that I am, chose to use Arch as my daily driver. Now you might think I'm crazy (and you're not wrong to do so) but I had other motives when making this decision. You see, the more i used linux the more fascinated I became with the idea of being in total control of my system. Having complete mastery of your tools is probably one of the most satisfying feelings any practitioner can have and nothing helps you master your tools as a software engineer like linux! You get an insight into how your computer works and the effects that has on your work cannot be overstated! 
+
+## Why Arch?
+So enter Arch. Why Arch? I don't think any other distro gives you the level of control Arch gives you over your system. No desktop environment, no preinstalled packages, no bloatware. Just you and your terminal. You get to choose what you want to install and how you want to configure it. It's like building a house from scratch, brick by brick, nail by nail.
+It can certainly be intimidating at first, but it's actually a liberating and empowering experience, to know that you built your system from the ground up, and that you can change it however you want. However, Arch's greatest strength is also it's greatest weakness. Most of us just cannot afford to spend hours ricing up our system and would rather have a pre-baked machine up and running. I guess that's why every year is the year of the Linux Desktop. That being said, there's a solution to that problem as there are a lot of people on the internet who give you their setup for free. I personally used [Omarchy](https://omarchy.org) which gives you a decent but minimal Arch setup. You get the best of both worlds because you still have to install Arch and setup encryption, networking, partitioning and all that jazz, but don't have to worry about numerous config files and packages. Thank God for the internet!
+
+## The Process
+
+
+I decided to write this guide as a simple bullet point list of the steps you need to take. I personally like this approach since you don't have the extra cognitive load of reading a paragraph to get the information you need. Just follow the steps! 
+
+> This guide assumes you have a basic understanding of how to use the terminal and some familiarity with Linux. You will see a lot of foreign terms being used so I highly recommend you read the [Arch Wiki](https://wiki.archlinux.org/) as you follow along. It's a great resource and has a lot of information on how to use Arch.
+
+Now that's enough yapping. Let's get into it! 
 
 - create the bootable and boot sytem into arch
 - connect to wifi. first run `iplink` to check network connection

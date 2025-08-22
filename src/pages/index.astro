@@ -1,9 +1,13 @@
 ---
 import ProjectCard from '../components/ProjectCard.astro'
+import BlogCard from '../components/BlogCard.astro'
 import BaseLayout from '../layouts/BaseLayout.astro'
 import { projects, testimonials } from '../js/data'
+import { getCollection } from 'astro:content'
 import '../styles/index.scss'
 import '../styles/projects.scss'
+
+const posts = await getCollection('blog')
 ---
 
 <BaseLayout title='Chubi - Software Engineer'>
@@ -234,54 +238,12 @@ import '../styles/projects.scss'
 		<div class='blog-cards-wrapper'>
 			<h1>I write about everything and nothing. Read my mind ramblings</h1>
 			<div class='blog-cards'>
-				<div class='blog-card' style='background-image: url(/images/blog/1_.jpg);'>
-					<div class='blog-card-description'>
-						<h3 class='title'>Title of my blog post</h3>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quod
-							quaerat nisi repudiandae esse ullam sunt itaque eius, temporibus
-							voluptate veniam odio corporis inventore accusamus hic molestiae
-							incidunt! Minima, explicabo.
-						</p>
-						<a href='#'>
-							<span>read more </span>
-							<img src='/svgs/arrow.svg' alt='arrow' />
-						</a>
-					</div>
-				</div>
-				<div class='blog-card' style='background-image: url(/images/blog/2_.jpg);'>
-					<div class='blog-card-description'>
-						<h3 class='title'>Title of my blog post</h3>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quod
-							quaerat nisi repudiandae esse ullam sunt itaque eius, temporibus
-							voluptate veniam odio corporis inventore accusamus hic molestiae
-							incidunt! Minima, explicabo.
-						</p>
-						<a href='#'>
-							<span>read more </span>
-							<img src='/svgs/arrow.svg' alt='arrow' />
-						</a>
-					</div>
-				</div>
-				<div class='blog-card' style='background-image: url(/images/blog/3_.jpg);'>
-					<div class='blog-card-description'>
-						<h3 class='title'>Title of my blog post</h3>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quod
-							quaerat nisi repudiandae esse ullam sunt itaque eius, temporibus
-							voluptate veniam odio corporis inventore accusamus hic molestiae
-							incidunt! Minima, explicabo.
-						</p>
-						<a href='#'>
-							<span>read more </span>
-							<img src='/svgs/arrow.svg' alt='arrow' />
-						</a>
-					</div>
-				</div>
+				{posts.slice(0,3).map((blog) => (
+					<BlogCard blog={blog} />
+				))}
 			</div>
 		</div>
-		<a href='#' class='btn btn-outline p-10'>read sum more</a>
+		<a href='/blog' class='btn btn-outline p-10'>read sum more</a>
 	</section>
 	<script>
 		import EmblaCarousel, { type EmblaOptionsType } from 'embla-carousel'

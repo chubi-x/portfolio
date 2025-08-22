@@ -20,3 +20,26 @@ code:not(pre *) {
 .prose{
   max-width: 80ch;
 }
+
+.blog a,
+.blog a:visited,
+.prose a,
+.prose a:visited {
+  color: var(--blue);
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.blog a:hover,
+.blog a:focus,
+.prose a:hover,
+.prose a:focus {
+  color: var(--green);
+}
+[data-theme="dark"] .blog a, [data-theme="dark"] .blog a:visited,
+[data-theme="dark"] .prose a, [data-theme="dark"] .prose a:visited {
+  color: white;
+}
+[data-theme="dark"] .blog a:hover, [data-theme="dark"] .blog a:focus,
+[data-theme="dark"] .prose a:hover, [data-theme="dark"] .prose a:focus {
+  color: var(--green);
+}

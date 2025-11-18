@@ -44,6 +44,13 @@ code:not(pre *) {
   color: var(--green);
 }
 
+
+  .prose img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
 /* Mobile responsive adjustments for blog pages */
 @media only screen and (max-width: 850px) {
   .blog {
@@ -77,13 +84,6 @@ code:not(pre *) {
     max-width: 100%;
     padding: 0 8px;
     box-sizing: border-box;
-  }
-
-  .prose img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
   }
 
   code:not(pre *) {

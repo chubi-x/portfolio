@@ -43,7 +43,9 @@ code:not(pre *) {
 [data-theme="dark"] .prose a:hover, [data-theme="dark"] .prose a:focus {
   color: var(--green);
 }
-
+.prose  {
+  font-weight: 400;
+}
 
   .prose img {
     max-width: 100%;

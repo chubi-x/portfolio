@@ -31,8 +31,8 @@ This formula was used to calculate the bounding box of the soil moisture grid re
 
 ## How the formula works
 
-Now, in this formula, you are given the center of a given pixel in a grid and you want to figure out the bottom left, bottom right, top right, and top left coordinates. In other words, `xmin`, `xmax`, `ymin` and `ymax`.
-In our case the pixels in the grid were of equal width, so calculating the width of a pixel was as easy as subtracting the center of the first pixel from the center of the pixel after it.
+Now, in this formula, you have the coordinates for the centers of each pixel in a grid and you want to figure out the bottom left, bottom right, top right, and top left coordinates. In other words, `xmin`, `xmax`, `ymin` and `ymax`.
+In our case the pixels in the grid were of equal width, so calculating the width of one pixel gives yields the width of every pixel, which is derived by subtracting the center of the first pixel from the center of the pixel after it.
 
 ```
 xwidth = x2-x1
@@ -41,8 +41,9 @@ ywidth = y2-y1
 
 Now that we have the width, we can easily calculate `xmin`, `xmax`, `ymin` and `ymax`.
 
-To get `xmin`, we simply move `xwidth/2` left (subtract) from `x0`, likewise for `ymin`, simply move `ywidth/2` from `y0`. It's the same for `xmax` and `ymax`, but since we're moving toward the right now, we'll be adding, so that will be `xmax` plus the `xwidth/2` and similar for `ymax`.
-
+To get `xmin`, we simply move `xwidth/2` left (subtract) from `x0`, likewise for `ymin`, simply move `ywidth/2` up from `y0`.
+It's the same for `xmax` and `ymax`, but this time we'll be adding the widths to get the max, so move toward the right for `xmax` and down for `ymax`. So that will be `xmax + xwidth/2` and similar for `ymax + ywidth/2`.
+We divide widths by two because `x` and `y` are the pixel centers.
 And that's it. The bounding box is defined by the coordinates `xMin, Ymin`, `xMax, YMin`, `XMin, YMax`, `XMax, YMax`.
 
 ![ A blank rectangular graph with labeled corners indicating coordinates: xMin, yMin; xMax, yMin; xMin, yMax; xMax, yMax.](/images/blog/bbox.png)

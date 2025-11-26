@@ -43,7 +43,16 @@ code:not(pre *) {
 [data-theme="dark"] .prose a:hover, [data-theme="dark"] .prose a:focus {
   color: var(--green);
 }
+.prose  {
+  font-weight: 400;
+}
 
+  .prose img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
 /* Mobile responsive adjustments for blog pages */
 @media only screen and (max-width: 850px) {
   .blog {
@@ -77,13 +86,6 @@ code:not(pre *) {
     max-width: 100%;
     padding: 0 8px;
     box-sizing: border-box;
-  }
-
-  .prose img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
   }
 
   code:not(pre *) {

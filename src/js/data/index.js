@@ -26,7 +26,7 @@ export const projects = () => {
         name: "Sorta",
         description:
           "an app that lets twitter users manage and categorize their bookmarks.",
-        link: "https://github.com/chubi-x/sorta",
+        link: "https://sorta.chubi.dev",
         thumbnail: "/images/projects/sorta.jpg",
         tools: [
           "typescript",

@@ -1,6 +1,25 @@
 export const projects = () => {
   let id = 1;
   return new Map([
+
+    [
+      id++,
+      {
+        name: "Sorta",
+        description:
+          "an app that lets twitter users manage and categorize their bookmarks.",
+        link: "https://sorta.chubi.dev",
+        thumbnail: "/images/projects/sorta.jpg",
+        tools: [
+          "typescript",
+          "react",
+          "tailwindcss",
+          "expressjs",
+          "firebase",
+          "twitterAPI",
+        ],
+      },
+    ],
     [
       id++,
       {
@@ -17,24 +36,6 @@ export const projects = () => {
           "redis",
           "docker",
           "rabbitmq",
-        ],
-      },
-    ],
-    [
-      id++,
-      {
-        name: "Sorta",
-        description:
-          "an app that lets twitter users manage and categorize their bookmarks.",
-        link: "https://sorta.chubi.dev",
-        thumbnail: "/images/projects/sorta.jpg",
-        tools: [
-          "typescript",
-          "react",
-          "tailwindcss",
-          "expressjs",
-          "firebase",
-          "twitterAPI",
         ],
       },
     ],

@@ -6,9 +6,9 @@ description: "The beginning of a series of blog posts on how I built an email-po
 image:
   url: "/images/photography/1.png"
   alt: "picture of a stones in a pool of blue water"
-pubDate: 2025-11-05
+pubDate: 2026-1-06
 tags: ["ai", "build-in-public"]
-slug: "series/building-subsumma/setting-up-postfix"
+slug: "series/building-subsumma/part-1-why"
 ---
 
 # Building an AI-powered newsletter Summarizer, Part 1: Why?

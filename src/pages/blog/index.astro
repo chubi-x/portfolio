@@ -6,7 +6,6 @@ import '../../styles/index.scss'
 import BlogCard from '../../components/BlogCard.astro'
 import { getCollection } from 'astro:content'
 
-// const posts = Object.values(import.meta.glob("./posts/*.md", { eager: true  }))
 const posts = await getCollection("blog") 
 ---
 
@@ -15,7 +14,7 @@ const posts = await getCollection("blog")
 
     <h1>Blog</h1>
     <div class="blog-cards">
-    {posts.map((blog) => (
+    {posts.sort((a,b)=>b.data.pubDate - a.data.pubDate).map((blog) => (
     <BlogCard blog={blog} />
     ))}
     </div>

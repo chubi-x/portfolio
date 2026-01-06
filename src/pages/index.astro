@@ -238,7 +238,7 @@ const posts = await getCollection('blog')
 		<div class='blog-cards-wrapper'>
 			<h1>I write about everything and nothing. Read my mind ramblings</h1>
 			<div class='blog-cards'>
-				{posts.slice(0,3).map((blog) => (
+				{posts.sort((a,b)=>b.data.pubDate - a.data.pubDate).slice(0,3).map((blog) => (
 					<BlogCard blog={blog} />
 				))}
 			</div>

@@ -7,7 +7,7 @@ description: "A deep dive into a perplexing bug in Django ORM cost calculations 
 image:
     url: "/images/blog/2_.jpg"
     alt: "picture of a stones in a pool of blue water"
-pubDate: 2025-11-05
+pubDate: 2025-11-20
 tags: ["django", "postgresql", "bugfix", "python", "orm"]
 slug: "the-sneaky-bug-how-integer-division-skewed-our-cost-calculations"
 ---

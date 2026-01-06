@@ -8,16 +8,16 @@ image:
     url: "/images/blog/2_.jpg"
     alt: "picture of a stones in a pool of blue water"
 pubDate: 2025-11-05
-tags: ["django", "Postgresql", "bugfix", "python", "orm"]
+tags: ["django", "postgresql", "bugfix", "python", "orm"]
 slug: "the-sneaky-bug-how-integer-division-skewed-our-cost-calculations"
 ---
 -----
 
-## **The Sneaky Bug: How Integer Division Skewed Our Cost Calculations**
+## The Sneaky Bug: How Integer Division Skewed Our Cost Calculations
 
-We've all been there: staring at two pieces of code that *should* do the exact same thing, yet produce stubbornly different results. Recently, I wrestled with just such a mystery while working on cost calculations in our Django application. The goal was simple: calculate the storage cost for datasets over a given period. The problem? My Django ORM query and a "manual" Python loop verification gave me different totals. 🤔
+We've all been there: staring at two pieces of code that *should* do the exact same thing, yet produce stubbornly different results. Recently, I wrestled with just such a mystery while working on cost calculations in our Django application. The goal was simple: calculate the storage cost for datasets over a given period. The problem? My Django ORM query and a "manual" Python loop verification gave me different totals.
 
-### **The Mystery of the Mismatched Costs**
+### The Mystery of the Mismatched Costs
 
 I needed a function to calculate the total storage cost for a set of data records within a specific date range. Each record has a size (in bytes), an added date, and an optional deletion date. The cost is based on size, duration stored, and a price per GB per month.
 
@@ -71,7 +71,7 @@ print(f"Python Loop Calculation: ${total_cost_py:.2f}")
 
 The results were consistently off\! `$5.18` vs. `$7.71`. I checked the filtering logic, the date handling, timezone awareness – everything seemed identical. What was going on?
 
-### **The "Aha\!" Moment: Integer vs. Float Division**
+### The "Aha\!" Moment: Integer vs. Float Division
 
 After much head-scratching, the culprit revealed itself: **integer division**.
 
@@ -96,7 +96,7 @@ Because both sides of the division were integers, the results were being truncat
 
 These small truncations added up across thousands of records, leading to the significant discrepancy.
 
-### **The Fix: Forcing Float Division**
+### The Fix: Forcing Float Division
 
 The solution was simple: ensure at least one number in the division is a float. This forces the calculation to use floating-point arithmetic and preserve the precision.
 
@@ -120,18 +120,16 @@ total_cost = records.aggregate(
 
 With these `.0` additions, both methods finally produced the same, correct result\!
 
-### **A Quick Note on PostgreSQL**
+### A Quick Note on PostgreSQL
 
 It's worth noting that this isn't a quirk where PostgreSQL *always* does integer division. PostgreSQL, like most SQL databases, performs integer division *only* when **both** operands are integers. If even one operand is a float, numeric, or decimal type, it performs standard division. The bug occurred because, in those specific calculations (`size / (1024**3)` and `days / 30`), both sides *were* integers.
 
-### **Lessons Learned**
+### Lessons Learned
 
 This bug hunt was a great reminder of a few key things:
 
 1.  **Numeric Types Matter:** Be mindful of integer vs. float division, especially when dealing with calculations that require precision (like billing\!). When in doubt, explicitly use floats (e.g., `30.0` instead of `30`).
 2.  **Verify ORM Logic:** While the Django ORM is powerful, it translates Python into SQL. Sometimes, subtle differences in database function behavior or type handling can lead to unexpected results. Verifying complex ORM queries with equivalent plain Python logic is a valuable debugging technique.
 3.  **Small Errors, Big Impact:** Tiny precision losses in intermediate calculations can cascade into significant errors in the final result, especially when aggregating over large datasets.
-
-So, the next time your numbers look slightly off, double-check your division – you might just find a sneaky integer lurking where a float ought to be\! Happy coding\! 
 
 -----

@@ -1,7 +1,6 @@
 export const projects = () => {
   let id = 1;
   return new Map([
-
     [
       id++,
       {
@@ -18,6 +17,17 @@ export const projects = () => {
           "firebase",
           "twitterAPI",
         ],
+      },
+    ],
+    [
+      id++,
+      {
+        name: "Ai Powered Dashboard",
+        description:
+          "A data dashboard with server rendered charts and AI chatbot for asking questions of the data (in progress)",
+        link: "https://dash.chubi.dev",
+        thumbnail: "/images/projects/dash.png",
+        tools: ["django", "docker", "htmx", "gemini"],
       },
     ],
     [

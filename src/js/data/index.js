@@ -125,7 +125,7 @@ export const navLinks = [
   { name: "projects", link: "/projects" },
   {
     name: "resume",
-    link: "https://docs.google.com/document/d/1ZbwJEVmN7KPrIflB-bRXPVuV3U68sLC1DVO47P0KhZw/edit?usp=sharing",
+    link: "https://docs.google.com/document/d/1_gKVX0GS5YRKlbydinJFy1eItJdBu6HVLYZUFlUbh6c/edit?usp=sharing",
   },
   { name: "contact", link: "/contact" },
   { name: "blog", link: "/blog" },
